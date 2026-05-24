@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keur-Serigne Touba Al Buqatul Mubaarak — Pikine</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --vert:#1A5C3A;--vert2:#2D8B5A;--vert-pale:#EAF4EE;
+  --or:#C9A84C;--or-clair:#F2DFA0;--or-fonce:#8B6914;
+  --brun:#2C1F0F;--creme:#FDF8EF;--blanc:#FFFEF9;
+  --texte:#2C2010;--texte-doux:#5A4A35;--nav-h:66px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--creme);color:var(--texte);padding-top:var(--nav-h)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;width:100%;z-index:500;background:rgba(26,92,58,0.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--or);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
+.nav-brand{display:flex;align-items:center;gap:0.9rem;text-decoration:none}
+.nav-brand-logo{width:40px;height:40px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.nav-brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.nav-brand-ar{font-family:'Amiri',serif;color:var(--or-clair);font-size:0.95rem;direction:rtl}
+.nav-brand-fr{font-size:0.58rem;color:#8ab8a0;letter-spacing:0.14em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:0.2rem;list-style:none;align-items:center}
+.nav-links a{color:#dde8e2;font-size:0.7rem;font-weight:500;text-decoration:none;letter-spacing:0.09em;text-transform:uppercase;padding:0.4rem 0.8rem;border-radius:2px;transition:all 0.2s;border:1px solid transparent}
+.nav-links a:hover{color:var(--or-clair);background:rgba(255,255,255,0.06)}
+.nav-links a.active{color:var(--or-clair);background:rgba(201,168,76,0.12);border-color:rgba(201,168,76,0.3)}
+.nav-cta{background:var(--or);color:var(--brun);border:none;padding:0.48rem 1.3rem;font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--or-clair)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--or-clair);border-radius:1px}
+.mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;width:100%;background:rgba(10,30,18,0.98);z-index:490;padding:1.5rem 2rem;flex-direction:column;gap:0.4rem;border-top:1px solid rgba(201,168,76,0.2)}
+.mob-menu.open{display:flex}
+.mob-menu a{color:var(--or-clair);font-size:0.85rem;text-decoration:none;padding:0.65rem 0;border-bottom:1px solid rgba(201,168,76,0.12);font-weight:500}
+.mob-menu .mob-don{color:var(--or);font-weight:700;border:none;margin-top:0.5rem;font-size:0.9rem}
+
+/* ── UTILITAIRES ── */
+.container{max-width:1100px;margin:0 auto}
+.s-pad{padding:5.5rem 2rem}
+.tag{font-size:0.64rem;color:var(--or-fonce);font-weight:700;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:0.65rem}
+.tag-or{color:var(--or)}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--brun);font-weight:700;line-height:1.15;margin-bottom:1rem}
+.h2 em{color:var(--vert);font-style:normal}
+.h2-light{color:var(--or-clair)}
+.h2-light em{color:#9ee0b8}
+.gold-rule{width:44px;height:2px;background:var(--or);margin-bottom:1.5rem}
+.vert-bg{background:var(--vert);position:relative;overflow:hidden}
+.vert-bg::before{content:'';position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,5 55,20 55,40 30,55 5,40 5,20' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E");background-size:60px 60px}
+.blanc-bg{background:var(--blanc)}
+.creme-bg{background:var(--creme)}
+.btn-or{background:var(--or);color:var(--brun);border:none;padding:0.88rem 2rem;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s}
+.btn-or:hover{background:var(--or-clair);transform:translateY(-1px)}
+.btn-vide{background:transparent;color:var(--or-clair);border:1.5px solid var(--or);padding:0.88rem 2rem;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s}
+.btn-vide:hover{background:rgba(201,168,76,0.1)}
+.btn-vert{background:var(--vert);color:var(--or-clair);border:1px solid var(--or);padding:0.88rem 2rem;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s}
+.btn-vert:hover{background:#155030}
+.divider-or{display:flex;align-items:center;justify-content:center;gap:10px;margin:0.8rem 0}
+.div-line{width:55px;height:1px;background:var(--or);opacity:0.55}
+.div-diamond{width:6px;height:6px;background:var(--or);transform:rotate(45deg)}
+.page-hero-bg{background:linear-gradient(155deg,#040f07 0%,#071e0e 30%,#0d3320 60%,#1A5C3A 100%);padding:4rem 2rem 3rem;position:relative;overflow:hidden;text-align:center}
+.page-hero-bg::before{content:'';position:absolute;inset:0;opacity:0.06;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.8'%3E%3Cpolygon points='40,6 74,22 74,58 40,74 6,58 6,22'/%3E%3Cpolygon points='40,18 62,28 62,52 40,62 18,52 18,28'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px}
+.breadcrumb{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;color:#8ab8a0;position:relative;z-index:1;margin-bottom:1rem}
+.breadcrumb a{color:var(--or);text-decoration:none}
+.ph-tag{display:inline-block;border:1px solid rgba(201,168,76,0.5);color:var(--or-clair);font-size:0.62rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:1px;margin-bottom:1rem;position:relative;z-index:1}
+.ph-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--blanc);font-weight:700;line-height:1.1;position:relative;z-index:1}
+.ph-title em{color:var(--or-clair);font-style:normal}
+.ph-sub{font-size:0.95rem;color:#b0cfc0;max-width:540px;line-height:1.78;margin:0.8rem auto 0;position:relative;z-index:1}
+
+/* ── DON WIDGET ── */
+.don-widget{background:var(--vert);border-radius:4px;padding:2rem;position:relative;overflow:hidden}
+.don-widget::before{content:'';position:absolute;inset:0;opacity:0.06;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,5 55,20 55,40 30,55 5,40 5,20' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E");background-size:60px 60px}
+.don-widget>*{position:relative;z-index:1}
+.don-amounts{display:grid;grid-template-columns:repeat(2,1fr);gap:0.7rem;margin:1rem 0}
+.don-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.28);border-radius:3px;padding:0.9rem;text-align:center;cursor:pointer;transition:all 0.2s}
+.don-btn:hover,.don-btn.sel{background:var(--or);border-color:var(--or)}
+.don-btn:hover .da,.don-btn.sel .da{color:var(--brun)}
+.don-btn:hover .dl,.don-btn.sel .dl{color:rgba(44,31,15,0.7)}
+.da{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--or-clair);font-weight:700;line-height:1}
+.dl{font-size:0.62rem;color:#8aaa9a;letter-spacing:0.05em;text-transform:uppercase;margin-top:0.2rem}
+.don-input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(201,168,76,0.3);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.85rem;padding:0.7rem 1rem;border-radius:2px;outline:none;margin-bottom:0.65rem}
+.don-input::placeholder{color:#5a8a6a}
+.don-input:focus{border-color:var(--or)}
+
+/* ── FOOTER ── */
+footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding:3rem 2.5rem 1.5rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 2rem}
+.footer-ar{font-family:'Amiri',serif;font-size:1.5rem;color:var(--or-clair);direction:rtl;margin-bottom:0.25rem}
+.footer-fr{font-size:0.65rem;color:#8a7565;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.8rem}
+.footer-desc{font-size:0.78rem;color:#7a6a5a;line-height:1.7;margin-bottom:0.8rem}
+.footer-tel{display:flex;flex-direction:column;gap:0.25rem}
+.footer-tel span{font-size:0.73rem;color:#8a7565}
+.footer-col h4{font-size:0.65rem;font-weight:700;color:var(--or-clair);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.9rem;padding-bottom:0.45rem;border-bottom:1px solid rgba(201,168,76,0.18)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.footer-col ul a{font-size:0.77rem;color:#8a7565;text-decoration:none;transition:color 0.2s}
+.footer-col ul a:hover{color:var(--or-clair)}
+.footer-bank-box{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:3px;padding:0.8rem;margin-top:0.8rem}
+.footer-bank-box p{font-size:0.68rem;color:#9a8a7a;line-height:1.6}
+.footer-bank-box strong{color:var(--or);font-size:0.7rem}
+.footer-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:1.2rem;border-top:1px solid rgba(201,168,76,0.1);flex-wrap:wrap;gap:0.5rem}
+.footer-bottom p{font-size:0.63rem;color:#5a4a3a;letter-spacing:0.05em}
+
+/* ── PROGRESS BAR ── */
+.pbar-section{background:var(--blanc);padding:2.5rem 2rem;border-bottom:1px solid #e8dfc8}
+.pbar-inner{max-width:1100px;margin:0 auto}
+.pbar-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0.9rem;flex-wrap:wrap;gap:0.5rem}
+.pbar-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--brun);font-weight:700}
+.pbar-pct{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--vert);font-weight:700;line-height:1}
+.pbar-track{width:100%;height:10px;background:#e8dfc8;border-radius:5px;overflow:hidden;margin-bottom:0.7rem}
+.pbar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--or-fonce),var(--or),var(--or-clair));border-radius:5px;transition:width 1.5s cubic-bezier(0.4,0,0.2,1)}
+.pbar-milestones{display:flex;gap:1.8rem;flex-wrap:wrap}
+.pbar-ms{display:flex;align-items:center;gap:0.45rem;font-size:0.68rem;color:var(--texte-doux)}
+.pbar-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ── CARDS ── */
+.card{background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;padding:1.6rem;transition:transform 0.2s,box-shadow 0.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(26,92,58,0.1)}
+.card-icon{font-size:1.5rem;margin-bottom:0.8rem}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--brun);font-weight:700;margin-bottom:0.5rem}
+.card p{font-size:0.82rem;color:var(--texte-doux);line-height:1.65}
+.zone-card{background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
+.zone-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(26,92,58,0.1)}
+.zone-head{background:var(--vert);padding:1rem 1.2rem}
+.zone-num{font-size:0.6rem;color:rgba(242,223,160,0.55);font-weight:600;letter-spacing:0.2em;text-transform:uppercase}
+.zone-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--or-clair);font-weight:600;margin-top:0.2rem}
+.zone-body{padding:1.2rem}
+.zone-surf{font-size:0.68rem;font-weight:700;color:var(--or-fonce);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.65rem}
+.zone-body ul{list-style:none;padding:0}
+.zone-body li{font-size:0.79rem;color:var(--texte-doux);padding:0.28rem 0;border-bottom:1px solid #f0e8d4;line-height:1.4}
+.zone-body li:last-child{border-bottom:none}
+.zone-body li::before{content:'✦';color:var(--or);font-size:0.5rem;margin-right:0.5rem;vertical-align:middle}
+.zone-cap{display:inline-block;margin-top:0.7rem;font-size:0.68rem;font-weight:700;color:var(--vert);background:var(--vert-pale);padding:0.22rem 0.65rem;border-radius:2px}
+
+/* ── IMPACTS TABS ── */
+.itabs{display:flex;border:1px solid #e8dfc8;border-radius:4px;overflow:hidden;margin-bottom:2rem}
+.itab{flex:1;padding:0.8rem;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;cursor:pointer;background:var(--blanc);color:var(--texte-doux);border:none;font-family:'Raleway',sans-serif;transition:all 0.2s}
+.itab.active{background:var(--vert);color:var(--or-clair)}
+.ipanel{display:none;grid-template-columns:1fr 1fr;gap:1.2rem}
+.ipanel.active{display:grid}
+.impact-item{display:flex;gap:1rem;padding:1rem;background:var(--vert-pale);border-radius:4px}
+.impact-icon{font-size:1.3rem;flex-shrink:0}
+.impact-item h4{font-size:0.8rem;font-weight:700;color:var(--brun);margin-bottom:0.25rem}
+.impact-item p{font-size:0.77rem;color:var(--texte-doux);line-height:1.55}
+
+/* ── DEFI ── */
+.defi{background:var(--vert-pale);border-left:3px solid var(--vert2);padding:0.9rem 1.1rem;border-radius:0 4px 4px 0;margin-bottom:0.9rem}
+.defi h4{font-size:0.8rem;font-weight:700;color:var(--vert);margin-bottom:0.2rem}
+.defi p{font-size:0.78rem;color:var(--texte-doux);line-height:1.6}
+
+/* ── GOUVERNANCE ── */
+.gov-center{text-align:center;margin-bottom:1.2rem}
+.gov-box-main{display:inline-block;background:var(--vert);color:var(--or-clair);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;padding:0.85rem 2.2rem;border-radius:3px;border:2px solid var(--or)}
+.gov-pres{text-align:center;margin-bottom:1.2rem}
+.gov-pres::before{content:'';display:block;width:2px;height:22px;background:var(--or);opacity:0.35;margin:0 auto}
+.gov-pres-box{display:inline-block;background:var(--vert-pale);border:1px solid var(--or);padding:0.65rem 1.6rem;border-radius:3px}
+.gov-pres-box h4{font-size:0.85rem;font-weight:700;color:var(--brun)}
+.gov-pres-box p{font-size:0.68rem;color:var(--vert);margin-top:0.15rem}
+.gov-members{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem;margin-bottom:2.2rem}
+.gov-member{background:var(--vert-pale);border:1px solid #d4e8d4;border-radius:3px;padding:0.75rem;text-align:center}
+.gov-member h5{font-size:0.76rem;font-weight:700;color:var(--brun);margin-bottom:0.2rem}
+.gov-member p{font-size:0.66rem;color:var(--texte-doux);line-height:1.4}
+.exec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem;margin-top:1.8rem}
+.exec-dept{background:var(--vert);border-radius:3px;padding:0.95rem 1.05rem}
+.exec-dept h4{font-size:0.73rem;font-weight:600;color:var(--or-clair);margin-bottom:0.45rem}
+.exec-dept ul{list-style:none;padding:0}
+.exec-dept li{font-size:0.68rem;color:#9ab8a8;padding:0.18rem 0;line-height:1.4}
+.exec-dept li::before{content:'› ';color:var(--or)}
+
+/* ── BUDGET TABLE ── */
+.btable{width:100%;border-collapse:collapse}
+.btable th{text-align:left;font-size:0.63rem;font-weight:700;color:var(--or-fonce);letter-spacing:0.15em;text-transform:uppercase;padding:0.6rem 0.8rem;border-bottom:2px solid var(--or);background:var(--vert-pale)}
+.btable td{font-size:0.79rem;color:var(--texte-doux);padding:0.62rem 0.8rem;border-bottom:1px solid #eee8d8}
+.btable tr.btotal td{font-weight:700;color:var(--brun);border-top:2px solid var(--or);background:var(--vert-pale);border-bottom:none}
+.btable td:last-child{text-align:right;font-weight:500;color:var(--brun)}
+
+/* ── CHARGES BOX ── */
+.charges-box{background:var(--vert);border-radius:4px;padding:1.6rem}
+.charges-box h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--or-clair);margin-bottom:0.9rem}
+.c-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.c-row:last-child{border-bottom:none;padding-top:0.7rem;border-top:1px solid rgba(201,168,76,0.35)}
+.c-row span:first-child{font-size:0.76rem;color:#9ab8a8}
+.c-row span:last-child{font-size:0.8rem;color:var(--or-clair);font-weight:600}
+.c-row.c-total span:first-child{color:var(--or-clair);font-weight:700}
+.c-row.c-total span:last-child{font-size:0.92rem}
+
+/* ── ACTU CARDS ── */
+.actu-card{background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;overflow:hidden;display:grid;grid-template-columns:110px 1fr;transition:transform 0.2s}
+.actu-card:hover{transform:translateX(3px)}
+.actu-date{background:var(--vert);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+.actu-day{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--or-clair);font-weight:700;line-height:1}
+.actu-month{font-size:0.6rem;color:#9ab8a8;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.15rem}
+.actu-year{font-size:0.65rem;color:rgba(242,223,160,0.45);margin-top:0.1rem}
+.actu-content{padding:1.15rem}
+.actu-tag{font-size:0.58rem;font-weight:700;color:var(--or-fonce);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.35rem}
+.actu-content h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--brun);font-weight:700;margin-bottom:0.45rem;line-height:1.3}
+.actu-content p{font-size:0.78rem;color:var(--texte-doux);line-height:1.65}
+
+/* ── CONTACT FORM ── */
+.flabel{font-size:0.67rem;font-weight:700;color:var(--brun);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:0.28rem}
+.finput,.ftextarea,.fselect{width:100%;background:var(--creme);border:1px solid #ddd0b8;font-family:'Raleway',sans-serif;font-size:0.87rem;color:var(--texte);padding:0.72rem 1rem;border-radius:2px;outline:none;transition:border-color 0.2s}
+.finput:focus,.ftextarea:focus,.fselect:focus{border-color:var(--or)}
+.ftextarea{resize:vertical;min-height:105px}
+.fselect{cursor:pointer}
+
+/* ── PALIERS DON ── */
+.palier{display:flex;align-items:center;gap:1rem;padding:0.95rem 1.15rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:3px;cursor:pointer;transition:all 0.2s;margin-bottom:0.65rem}
+.palier:hover,.palier.sel{background:rgba(201,168,76,0.14);border-color:rgba(201,168,76,0.5)}
+.palier-icon{font-size:1.2rem;flex-shrink:0}
+.palier-info{flex:1}
+.palier-info h4{font-size:0.8rem;color:var(--or-clair);font-weight:600}
+.palier-info p{font-size:0.68rem;color:#8aaa9a;margin-top:0.1rem}
+.palier-amount{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--or-clair);font-weight:700;white-space:nowrap}
+
+/* ── TEMOIGNAGE ── */
+.temo-card{background:var(--creme);border:1px solid #e8dfc8;border-radius:4px;padding:1.4rem}
+.temo-stars{color:var(--or);font-size:0.68rem;margin-bottom:0.5rem}
+.temo-quote{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--brun);font-style:italic;line-height:1.65;margin-bottom:0.9rem}
+.temo-author{display:flex;align-items:center;gap:0.7rem}
+.temo-avatar{width:34px;height:34px;border-radius:50%;background:var(--vert);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:var(--or-clair);font-weight:700;font-family:'Cormorant Garamond',serif;flex-shrink:0}
+.temo-name{font-size:0.77rem;font-weight:700;color:var(--brun)}
+.temo-place{font-size:0.67rem;color:var(--texte-doux)}
+
+/* ── PARTENARIAT TIERS ── */
+.ptier-head{padding:1.15rem;text-align:center}
+.ptier-head h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--or-clair);font-weight:700}
+.ptier-head .pa{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--or-clair);font-weight:700;margin-top:0.2rem}
+.ptier-body{background:var(--blanc);border:1px solid #e8dfc8;border-top:none;padding:1.15rem;text-align:center}
+.ptier-body ul{list-style:none;text-align:left;margin-bottom:0.9rem}
+.ptier-body li{font-size:0.74rem;color:var(--texte-doux);padding:0.28rem 0}
+.ptier-body li::before{content:'✓ ';color:var(--vert);font-weight:700}
+
+/* ── FAQ ── */
+.faq-item{background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;overflow:hidden;margin-bottom:0.7rem}
+.faq-q{padding:0.95rem 1.2rem;font-size:0.86rem;font-weight:600;color:var(--brun);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q:hover{background:var(--vert-pale)}
+.faq-arrow{font-size:0.68rem;color:var(--or-fonce);transition:transform 0.2s}
+.faq-a{display:none;padding:0 1.2rem 0.9rem;font-size:0.8rem;color:var(--texte-doux);line-height:1.72}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+
+/* ── CITATION FINALE ── */
+.citation-section{background:var(--brun);padding:5rem 2rem;text-align:center;position:relative}
+.citation-section::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:11rem;color:rgba(201,168,76,0.06);position:absolute;top:-1rem;left:2rem;line-height:1}
+.citation-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--or-clair);font-style:italic;max-width:700px;margin:0 auto 1.2rem;line-height:1.65;position:relative;z-index:1}
+.citation-author{font-size:0.73rem;color:#8a7565;letter-spacing:0.2em;text-transform:uppercase}
+.citation-ar{font-family:'Amiri',serif;font-size:1.4rem;color:rgba(201,168,76,0.35);direction:rtl;margin-top:1.2rem}
+
+/* ── CONTRIB ── */
+.contrib-item{display:flex;align-items:center;gap:0.9rem;padding:0.85rem 1rem;background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;transition:transform 0.2s;margin-bottom:0.6rem}
+.contrib-item:hover{transform:translateX(3px)}
+.contrib-avatar{width:36px;height:36px;border-radius:50%;background:var(--vert);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--or-clair);font-weight:700;flex-shrink:0}
+.contrib-info{flex:1}
+.contrib-info h4{font-size:0.8rem;font-weight:600;color:var(--brun)}
+.contrib-info p{font-size:0.68rem;color:var(--texte-doux);margin-top:0.08rem;font-style:italic}
+.contrib-amount{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--vert);font-weight:700;white-space:nowrap}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .ipanel.active{grid-template-columns:1fr}
+  .gov-members,.exec-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .gov-members,.exec-grid{grid-template-columns:1fr}
+  .actu-card{grid-template-columns:85px 1fr}
+}
+</style>
+<style>
+.hero{min-height:100vh;background:linear-gradient(155deg,#040f07 0%,#071e0e 25%,#0d3320 55%,#1A5C3A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5.5rem 2rem 4rem;position:relative;overflow:hidden}
+.hero-geo{position:absolute;inset:0;opacity:0.07;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.8'%3E%3Cpolygon points='40,6 74,22 74,58 40,74 6,58 6,22'/%3E%3Cpolygon points='40,18 62,28 62,52 40,62 18,52 18,28'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px}
+.hero-badge{display:inline-block;border:1px solid rgba(201,168,76,0.55);color:var(--or-clair);font-size:0.64rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;padding:0.35rem 1.15rem;border-radius:1px;margin-bottom:1.4rem;position:relative;z-index:1}
+.hero-ar{font-family:'Amiri',serif;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--or-clair);direction:rtl;text-shadow:0 2px 28px rgba(201,168,76,0.2);position:relative;z-index:1;margin-bottom:0.2rem}
+.hero-ar-sub{font-family:'Amiri',serif;font-size:clamp(1rem,2.5vw,1.45rem);color:rgba(242,223,160,0.62);direction:rtl;margin-bottom:1.2rem;position:relative;z-index:1}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,4rem);color:var(--blanc);font-weight:700;line-height:1.08;margin-bottom:0.4rem;position:relative;z-index:1}
+.hero-title em{color:var(--or-clair);font-style:normal}
+.hero-loc{font-size:0.74rem;color:#8ab8a0;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.1rem;position:relative;z-index:1}
+.hero-desc{font-size:0.96rem;color:#b0cfc0;max-width:575px;line-height:1.82;margin-bottom:2.2rem;position:relative;z-index:1}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.hero-kpis{display:flex;gap:3rem;margin-top:3.5rem;padding-top:2.2rem;border-top:1px solid rgba(201,168,76,0.2);flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.kpi-val{font-family:'Cormorant Garamond',serif;font-size:2.3rem;color:var(--or-clair);font-weight:700;line-height:1}
+.kpi-val small{font-size:1rem;opacity:0.7}
+.kpi-lbl{font-size:0.62rem;color:#7aaa8a;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.25rem}
+.urgence-band{background:linear-gradient(135deg,#071e0e,#1A5C3A);border-top:3px solid var(--or);border-bottom:3px solid var(--or);padding:1.4rem 2rem}
+.urg-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.urg-txt{display:flex;align-items:center;gap:1rem}
+.urg-icon{font-size:1.9rem}
+.urg-txt h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--or-clair);font-weight:700}
+.urg-txt p{font-size:0.78rem;color:#9ab8a8;margin-top:0.15rem}
+.urg-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.don-grid-home{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.don-home-intro p{font-size:0.93rem;color:var(--texte-doux);line-height:1.82;margin-bottom:1rem}
+.don-home-methods{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.3rem}
+.don-method{display:flex;align-items:center;gap:0.9rem;padding:0.75rem 1rem;background:var(--blanc);border:1px solid #e8dfc8;border-radius:3px}
+.don-method-icon{font-size:1.2rem}
+.don-method h4{font-size:0.78rem;font-weight:700;color:var(--brun);margin-bottom:0.08rem}
+.don-method p{font-size:0.7rem;color:var(--texte-doux)}
+.don-quote{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--brun);font-style:italic;border-left:3px solid var(--or);padding:0.8rem 1.1rem;background:var(--vert-pale);line-height:1.6;margin:1.3rem 0}
+.don-quote small{display:block;font-size:0.68rem;font-style:normal;font-family:'Raleway',sans-serif;color:var(--vert);margin-top:0.35rem;letter-spacing:0.06em}
+.contrib-total-box{background:var(--vert);border-radius:4px;padding:1.3rem;text-align:center;margin-top:1rem}
+.ctv{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--or-clair);font-weight:700}
+.ctl{font-size:0.67rem;color:#8aaa9a;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.25rem}
+.tier-list{display:flex;flex-direction:column;gap:0.55rem;margin:1.1rem 0}
+.tier{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0.8rem;border-radius:3px;border:1px solid #e8dfc8;background:var(--blanc)}
+.tier.featured{background:var(--vert-pale);border-color:var(--or)}
+.tier-lbl{font-size:0.78rem;color:var(--texte-doux)}
+.tier.featured .tier-lbl{color:var(--brun);font-weight:600}
+.tier-amt{font-family:'Cormorant Garamond',serif;font-size:0.98rem;color:var(--vert);font-weight:700}
+.snap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.2rem}
+.snap-card{border-radius:4px;overflow:hidden}
+.snap-head{background:var(--vert);padding:1.1rem 1.15rem}
+.snap-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:rgba(201,168,76,0.35);font-weight:700;line-height:1}
+.snap-head h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--or-clair);font-weight:600;margin-top:0.25rem}
+.snap-body{background:var(--blanc);border:1px solid #e8dfc8;border-top:none;padding:1.1rem}
+.snap-body p{font-size:0.79rem;color:var(--texte-doux);line-height:1.65;margin-bottom:0.75rem}
+.snap-lnk{font-size:0.7rem;color:var(--vert);font-weight:700;text-decoration:none;letter-spacing:0.04em}
+.snap-lnk:hover{color:var(--or-fonce)}
+.temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem}
+@media(max-width:900px){.don-grid-home{grid-template-columns:1fr;gap:2rem}.snap-grid,.temo-grid{grid-template-columns:1fr 1fr}.hero-kpis{gap:1.5rem}}
+@media(max-width:560px){.snap-grid,.temo-grid,.urg-inner{grid-template-columns:1fr;flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<section class="hero">
+  <div class="hero-geo"></div>
+  <div class="hero-badge">Projet de Construction · Pikine · Dakar · Sénégal</div>
+  <div class="hero-ar">كير سريني توبا</div>
+  <div class="hero-ar-sub">البقعة المباركة — بيكين</div>
+  <div class="divider-or"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+  <h1 class="hero-title">Keur-Serigne Touba<br><em>Al Buqatul Mubaarak</em></h1>
+  <div class="hero-loc">◆ Pikine · Dakar · Sénégal ◆</div>
+  <p class="hero-desc">Un complexe multidimensionnel alliant spiritualité, éducation, culture et développement économique — au cœur de Pikine, pour la communauté mouride et les générations futures.</p>
+  <div class="hero-actions">
+    <a class="btn-or" href="dons.html">💛 Contribuer maintenant</a>
+    <a class="btn-vide" href="projet.html">Découvrir le projet →</a>
+  </div>
+  <div class="hero-kpis">
+    <div style="text-align:center"><div class="kpi-val">5<small> Mds</small></div><div class="kpi-lbl">F CFA — Budget total</div></div>
+    <div style="text-align:center"><div class="kpi-val">2 401</div><div class="kpi-lbl">Fidèles — Capacité prière</div></div>
+    <div style="text-align:center"><div class="kpi-val">5 000</div><div class="kpi-lbl">Personnes — Esplanade</div></div>
+    <div style="text-align:center"><div class="kpi-val">760K+</div><div class="kpi-lbl">Habitants — Pikine</div></div>
+  </div>
+</section>
+
+<!-- URGENCE -->
+<div class="urgence-band">
+  <div class="urg-inner">
+    <div class="urg-txt">
+      <div class="urg-icon">🌙</div>
+      <div>
+        <h3>Chaque don rapproche la mosquée de son ouverture</h3>
+        <p>La communauté mouride de Pikine attend ce lieu sacré depuis des années. Votre contribution compte.</p>
+      </div>
+    </div>
+    <div class="urg-actions">
+      <a class="btn-or" href="dons.html">💛 Faire un don</a>
+      <a class="btn-vide" href="dons.html">🤝 Devenir partenaire</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESSION -->
+<div class="pbar-section">
+  <div class="pbar-inner">
+    <div class="pbar-header">
+      <div>
+        <div class="tag">Financement en cours</div>
+        <div class="pbar-title">Objectif : 5 000 000 000 F CFA</div>
+        <div style="font-size:0.67rem;color:var(--texte-doux)">≈ 8,9 millions USD · 3 phases de construction</div>
+      </div>
+      <div style="text-align:right">
+        <div class="pbar-pct" id="ppct">0%</div>
+        <div style="font-size:0.66rem;color:var(--texte-doux)">du financement atteint</div>
+      </div>
+    </div>
+    <div class="pbar-track"><div class="pbar-fill" id="pbar"></div></div>
+    <div class="pbar-milestones">
+      <div class="pbar-ms"><div class="pbar-dot" style="background:var(--or-fonce)"></div><span>Phase 1 — Fondations 25%</span></div>
+      <div class="pbar-ms"><div class="pbar-dot" style="background:var(--or)"></div><span>Phase 2 — Gros œuvre 60%</span></div>
+      <div class="pbar-ms"><div class="pbar-dot" style="background:var(--or-clair)"></div><span>Phase 3 — Finitions 100%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- DON CENTRAL -->
+<section class="s-pad blanc-bg" id="don">
+  <div class="container">
+    <div class="don-grid-home">
+      <div class="don-home-intro">
+        <div class="tag">Votre contribution</div>
+        <h2 class="h2">Bâtissons ensemble la <em>Maison de Dieu</em></h2>
+        <div class="gold-rule"></div>
+        <p>Chaque don, aussi petit soit-il, est un acte de foi et de solidarité. La ville de Pikine, avec ses 760 000 habitants, manque cruellement d'une grande mosquée. Les fidèles prient dans les rues et des espaces inadaptés. Votre contribution change cette réalité.</p>
+        <p>Depuis le Sénégal ou la diaspora mondiale, rejoignez des centaines de fidèles déjà engagés pour ce projet historique.</p>
+        <div class="don-quote">
+          « Le travail est une prière. »
+          <small>— Cheikh Ahmadou Bamba Mbacké, Fondateur du Mouridisme</small>
+        </div>
+        <div class="don-home-methods">
+          <div class="don-method"><div class="don-method-icon">🏦</div><div><h4>Banque Islamique du Sénégal</h4><p>N° SN079 01113 251182981001</p></div></div>
+          <div class="don-method"><div class="don-method-icon">📱</div><div><h4>Wave / Orange Money</h4><p>+221 77 796 05 06</p></div></div>
+          <div class="don-method"><div class="don-method-icon">💳</div><div><h4>Virement international</h4><p>Disponible via le formulaire de don</p></div></div>
+        </div>
+      </div>
+      <!-- Widget don -->
+      <div class="don-widget">
+        <div class="tag tag-or">Faire un don</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--or-clair);margin-bottom:0.25rem">Choisissez votre contribution</h3>
+        <p style="font-size:0.76rem;color:#8aaa9a;margin-bottom:0.6rem">Chaque montant correspond à un élément concret du complexe</p>
+        <div class="don-amounts">
+          <div class="don-btn sel" onclick="selDon(this)"><div class="da">5 000</div><div class="dl">F CFA · Une brique</div></div>
+          <div class="don-btn" onclick="selDon(this)"><div class="da">10 000</div><div class="dl">F CFA · Un carreau</div></div>
+          <div class="don-btn" onclick="selDon(this)"><div class="da">25 000</div><div class="dl">F CFA · Une colonne</div></div>
+          <div class="don-btn" onclick="selDon(this)"><div class="da">50 000</div><div class="dl">F CFA · Un vitrail</div></div>
+          <div class="don-btn" onclick="selDon(this)"><div class="da">100 000</div><div class="dl">F CFA · Une fenêtre</div></div>
+          <div class="don-btn" onclick="selDon(this)"><div class="da">Libre</div><div class="dl">Votre montant</div></div>
+        </div>
+        <input id="don-nom" class="don-input" type="text" placeholder="Votre nom complet *">
+        <input class="don-input" type="email" placeholder="Votre email *">
+        <input class="don-input" type="tel" placeholder="Téléphone (Wave/Orange Money)">
+        <select class="don-input" style="cursor:pointer">
+          <option>Mode de paiement</option>
+          <option>Wave</option><option>Orange Money</option>
+          <option>Virement BIS</option><option>Virement international</option>
+        </select>
+        <button class="btn-or" style="width:100%;justify-content:center;margin-top:0.3rem" onclick="submitDon()">💛 Valider ma contribution</button>
+        <p style="font-size:0.63rem;color:#5a8a6a;margin-top:0.7rem;text-align:center">Un reçu officiel vous sera remis · Paiement 100% sécurisé</p>
+        <div style="margin-top:0.9rem;padding:0.7rem;border:1px solid rgba(201,168,76,0.2);border-radius:3px;text-align:center">
+          <p style="font-size:0.68rem;color:#8aaa9a">Contribution importante ? <a href="dons.html" style="color:var(--or-clair);font-weight:600">Contactez-nous pour un partenariat →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRIBUTIONS RÉCENTES -->
+<section class="s-pad creme-bg">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start">
+      <div>
+        <div class="tag">Communauté</div>
+        <h2 class="h2">Contributions <em>récentes</em></h2>
+        <div class="gold-rule"></div>
+        <p style="color:var(--texte-doux);font-size:0.91rem;line-height:1.8;margin-bottom:1.3rem">Rejoignez des centaines de fidèles du Sénégal et de la diaspora déjà engagés pour ce projet.</p>
+        <div class="contrib-item"><div class="contrib-avatar">AM</div><div class="contrib-info"><h4>Abdou M. — Pikine</h4><p>« Que Dieu bénisse ce projet »</p></div><div class="contrib-amount">50 000 F</div></div>
+        <div class="contrib-item"><div class="contrib-avatar">FM</div><div class="contrib-info"><h4>Fatou M. — Paris, France</h4><p>« Fière de contribuer depuis la diaspora »</p></div><div class="contrib-amount">25 000 F</div></div>
+        <div class="contrib-item"><div class="contrib-avatar">IS</div><div class="contrib-info"><h4>Ibrahim S. — New York, USA</h4><p>« Pour nos frères et sœurs de Pikine »</p></div><div class="contrib-amount">100 000 F</div></div>
+        <div class="contrib-item"><div class="contrib-avatar">KD</div><div class="contrib-info"><h4>Dahira Pikine Nord — collectif</h4><p>« Mobilisation de notre dahira »</p></div><div class="contrib-amount">200 000 F</div></div>
+        <div class="contrib-total-box">
+          <div class="ctv">893 500 000 F CFA</div>
+          <div class="ctl">collectés à ce jour · Objectif : 5 milliards F CFA</div>
+        </div>
+      </div>
+      <div>
+        <div class="tag">Rejoindre le mouvement</div>
+        <h2 class="h2">À partir de <em>5 000 F CFA</em></h2>
+        <div class="gold-rule"></div>
+        <div style="background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;padding:1.4rem">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brun);margin-bottom:0.5rem">Chaque geste compte</h3>
+          <p style="font-size:0.82rem;color:var(--texte-doux);line-height:1.65;margin-bottom:1rem">Que vous contribuiez individuellement, via votre Dahira, ou en tant qu'entreprise partenaire, votre soutien bâtit concrètement ce lieu sacré.</p>
+          <div class="tier-list">
+            <div class="tier"><div class="tier-lbl">🧱 Contributeur — Une brique</div><div class="tier-amt">5 000 F</div></div>
+            <div class="tier"><div class="tier-lbl">🏛️ Bâtisseur — Une colonne</div><div class="tier-amt">25 000 F</div></div>
+            <div class="tier featured"><div class="tier-lbl">🪟 Donateur — Une fenêtre ⭐</div><div class="tier-amt">100 000 F</div></div>
+            <div class="tier"><div class="tier-lbl">🚪 Mécène — Une porte</div><div class="tier-amt">500 000 F</div></div>
+            <div class="tier"><div class="tier-lbl">🕌 Fondateur — Un pilier</div><div class="tier-amt">1 000 000 F+</div></div>
+          </div>
+          <a class="btn-or" href="dons.html" style="width:100%;justify-content:center">💛 Voir toutes les options</a>
+        </div>
+        <div style="margin-top:1.1rem;padding:1rem;background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px">
+          <h4 style="font-size:0.77rem;font-weight:700;color:var(--brun);margin-bottom:0.4rem">🤝 Votre Dahira peut aussi contribuer</h4>
+          <p style="font-size:0.74rem;color:var(--texte-doux);line-height:1.6;margin-bottom:0.65rem">Les Dahiras du département de Pikine sont invitées à se mobiliser collectivement.</p>
+          <a class="btn-vert" href="contact.html" style="font-size:0.7rem;padding:0.55rem 1.1rem">Contacter le comité →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNAPSHOT PROJET -->
+<section class="s-pad blanc-bg">
+  <div class="container">
+    <div class="tag">Le projet en bref</div>
+    <h2 class="h2">Un complexe <em>complet</em> pour Pikine</h2>
+    <div class="gold-rule"></div>
+    <div class="snap-grid">
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">01</div><h3>Mosquée & Minaret</h3></div><div class="snap-body"><p>2 401 fidèles en simultané, climatisation, acoustique professionnelle et motifs mourides traditionnels.</p><a class="snap-lnk" href="complexe.html">Voir la zone culte →</a></div></div>
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">02</div><h3>Institut Islamique</h3></div><div class="snap-body"><p>5 niveaux, 1 196 m², bibliothèque numérique, auditorium 600 m², ateliers digital et sciences islamiques.</p><a class="snap-lnk" href="complexe.html">Voir l'institut →</a></div></div>
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">03</div><h3>Résidence du Khalife</h3></div><div class="snap-body"><p>20 chambres pour l'accueil du Khalife Général et des délégations. Jardin privé 300 m².</p><a class="snap-lnk" href="complexe.html">Voir la résidence →</a></div></div>
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">04</div><h3>Esplanade 4 800 m²</h3></div><div class="snap-body"><p>Espace polyvalent pour 5 000 personnes : Magal, Gamou, Xassaïde. Éclairage solaire.</p><a class="snap-lnk" href="complexe.html">Voir l'esplanade →</a></div></div>
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">05</div><h3>Studio Multimédia</h3></div><div class="snap-body"><p>Salle acoustique pour Xassaïdes, studio HD pour produire du contenu religieux en ligne.</p><a class="snap-lnk" href="complexe.html">Voir le studio →</a></div></div>
+      <div class="snap-card"><div class="snap-head"><div class="snap-num">06</div><h3>Infirmerie & Santé</h3></div><div class="snap-body"><p>Clinique, pharmacie (UCAD), morgue islamique 4 chambres. Partenariats hospitaliers.</p><a class="snap-lnk" href="complexe.html">Voir les services →</a></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.2rem">
+      <a class="btn-vert" href="complexe.html">Découvrir tout le complexe →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="s-pad creme-bg">
+  <div class="container">
+    <div class="tag">La voix de la communauté</div>
+    <h2 class="h2">Pourquoi ils <em>soutiennent</em> le projet</h2>
+    <div class="gold-rule"></div>
+    <div class="temo-grid">
+      <div class="temo-card"><div class="temo-stars">★★★★★</div><p class="temo-quote">« Ce complexe, c'est le rêve de toute la communauté mouride de Pikine. Enfin un lieu digne pour prier, apprendre et se retrouver. »</p><div class="temo-author"><div class="temo-avatar">MS</div><div><div class="temo-name">Mamadou S.</div><div class="temo-place">Chef de quartier, Pikine Est</div></div></div></div>
+      <div class="temo-card"><div class="temo-stars">★★★★★</div><p class="temo-quote">« Depuis Paris, je contribue chaque mois. Je veux que mes enfants puissent un jour prier dans cette mosquée. »</p><div class="temo-author"><div class="temo-avatar">AD</div><div><div class="temo-name">Aminata D.</div><div class="temo-place">Diaspora mouride, Paris</div></div></div></div>
+      <div class="temo-card"><div class="temo-stars">★★★★★</div><p class="temo-quote">« L'Institut Islamique va changer la vie de nos jeunes : éducation religieuse ET formation numérique. C'est l'avenir. »</p><div class="temo-author"><div class="temo-avatar">OB</div><div><div class="temo-name">Ousmane B.</div><div class="temo-place">Enseignant, Pikine</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="vert-bg s-pad" style="text-align:center">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="tag tag-or">Rejoindre le mouvement</div>
+    <h2 class="h2 h2-light">Bâtissons ensemble<br>la <em>Maison de Dieu</em></h2>
+    <p style="color:#b0cfc0;max-width:490px;margin:0 auto 2rem;line-height:1.8;font-size:0.95rem">Chaque brique posée, chaque colonne érigée, chaque fenêtre installée porte l'empreinte de votre foi et de votre générosité.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn-or" href="dons.html">💛 Faire un don maintenant</a>
+      <a class="btn-vide" href="contact.html">✉️ Nous contacter</a>
+      <a class="btn-vide" href="projet.html">🕌 En savoir plus</a>
+    </div>
+    <div style="margin-top:2.2rem;font-family:'Amiri',serif;font-size:1.6rem;color:rgba(201,168,76,0.35);direction:rtl">جزاكم الله خيرًا · الله أكبر</div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script>
+var NAV_HTML = `<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-brand-logo">🕌</div>
+    <div class="nav-brand-txt">
+      <span class="nav-brand-ar">كير سريني توبا — بيكين</span>
+      <span class="nav-brand-fr">Al Buqatul Mubaarak · Pikine</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="projet.html">Le Projet</a></li>
+    <li><a href="complexe.html">Le Complexe</a></li>
+    <li><a href="gouvernance.html">Gouvernance</a></li>
+    <li><a href="actualites.html">Actualités</a></li>
+    <li><a href="dons.html">Contribuer</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="dons.html">💛 Faire un don</a>
+  <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">🏠 Accueil</a>
+  <a href="projet.html">🕌 Le Projet</a>
+  <a href="complexe.html">🏛️ Le Complexe</a>
+  <a href="gouvernance.html">👥 Gouvernance</a>
+  <a href="actualites.html">📰 Actualités</a>
+  <a href="dons.html">💚 Contribuer</a>
+  <a href="contact.html">✉️ Contact</a>
+  <a href="dons.html" class="mob-don">💛 Faire un don maintenant</a>
+</div>`;
+
+var FOOTER_HTML = `<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-ar">كير سريني توبا — البقعة المباركة</div>
+      <div class="footer-fr">Keur-Serigne Touba Al Buqatul Mubaarak · Pikine</div>
+      <p class="footer-desc">Un complexe multidimensionnel alliant spiritualité, éducation, culture et développement économique au cœur de Pikine, Dakar, pour la communauté mouride.</p>
+      <div class="footer-tel">
+        <span>📞 +221 77 551 36 92</span><span>📞 +221 77 430 22 01</span>
+        <span>📞 +221 77 639 26 12</span><span>📞 +221 70 886 66 27</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projet.html">Le Projet</a></li>
+        <li><a href="complexe.html">Le Complexe</a></li>
+        <li><a href="gouvernance.html">Gouvernance</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Participer</h4>
+      <ul>
+        <li><a href="dons.html">💛 Faire un don</a></li>
+        <li><a href="dons.html">🤝 Bénévolat</a></li>
+        <li><a href="dons.html">🏢 Partenariat</a></li>
+        <li><a href="dons.html">🌍 Diaspora</a></li>
+        <li><a href="contact.html">✉️ Nous écrire</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Paiement direct</h4>
+      <ul>
+        <li><a href="#">🏦 Banque Islamique du Sénégal</a></li>
+        <li><a href="#">📱 Wave / Orange Money</a></li>
+      </ul>
+      <div class="footer-bank-box">
+        <p><strong>BIS</strong> · N° SN079 01113 251182981001</p>
+        <p style="margin-top:0.4rem"><strong>Wave/OM</strong> · +221 77 796 05 06</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</p>
+    <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
+  </div>
+</footer>`;
+
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('nav-root').innerHTML = NAV_HTML;
+  document.getElementById('footer-root').innerHTML = FOOTER_HTML;
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    if(a.getAttribute('href') === page) a.classList.add('active');
+  });
+});
+function selDon(el){
+  el.closest('.don-amounts').querySelectorAll('.don-btn').forEach(function(b){b.classList.remove('sel')});
+  el.classList.add('sel');
+}
+function selPalier(el){
+  document.querySelectorAll('.palier').forEach(function(p){p.classList.remove('sel')});
+  el.classList.add('sel');
+}
+function showTab(panelId, btn, cls){
+  document.querySelectorAll('.'+cls+'-panel').forEach(function(p){p.style.display='none';p.classList.remove('active')});
+  document.querySelectorAll('.'+cls+'-tab').forEach(function(t){t.classList.remove('active')});
+  var p=document.getElementById(panelId);
+  if(p){p.style.display='grid';p.classList.add('active')}
+  btn.classList.add('active');
+}
+function animBar(barId, pctId, target){
+  var bar=document.getElementById(barId), pct=document.getElementById(pctId);
+  if(!bar) return;
+  var cur=0, iv=setInterval(function(){
+    cur+=0.4; if(cur>=target){cur=target;clearInterval(iv)}
+    bar.style.width=cur+'%';
+    if(pct) pct.textContent=Math.round(cur)+'%';
+  },20);
+}
+function toggleFaq(q){q.parentElement.classList.toggle('open')}
+function submitDon(){
+  var n=document.getElementById('don-nom');
+  if(n&&!n.value){alert('Veuillez renseigner votre nom.');return}
+  alert('Barakallahu fikoum !\nVotre contribution a été enregistrée.\nNous vous contacterons pour finaliser.\n\nجزاكم الله خيرًا');
+}
+function submitContact(){alert('Message envoyé au comité.\nBarakallahu fikoum !')}
+function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
+</script>
+<script>window.addEventListener('load',function(){animBar('pbar','ppct',18)})</script>
+</body></html>
