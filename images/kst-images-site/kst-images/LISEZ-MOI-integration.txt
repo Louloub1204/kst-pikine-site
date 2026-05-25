@@ -1,0 +1,103 @@
+══════════════════════════════════════════════════════
+  IMAGES DU PROJET — Keur-Serigne Touba Al Buqatul Mubaarak
+  Guide d'intégration dans le site kst-pikine.org
+══════════════════════════════════════════════════════
+
+LISTE DES 16 IMAGES EXTRAITES DU PDF
+──────────────────────────────────────
+01-hero-complexe.jpg      → Vue façade principale (page d'accueil hero)
+02-plan-masse.jpg         → Plan de masse du complexe (page Complexe)
+03-vue-generale.jpg       → Vue générale du site
+04-mosquee-nuit.jpg       → Rendu 3D nocturne de la mosquée ⭐ LA PLUS BELLE
+05-coupe-facade.jpg       → Coupe AA — élévation façade
+06-facade-sud-ouest.jpg   → Façade sud-ouest
+07-vue-3d-aerienne.jpg    → Vue 3D aérienne du complexe
+08-mosquee-rdc.jpg        → Plan mosquée rez-de-chaussée
+09-mosquee-etage.jpg      → Plan mosquée étage
+10-residence-jour.jpg     → Résidence Keur-Serigne Touba (jour)
+11-residence-nuit.jpg     → Résidence et mosquée (vue de rue) ⭐ TRÈS BELLE
+12-esplanade.jpg          → Esplanade polyvalente
+13-conservatoire.jpg      → Espace Qaçaid / Conservatoire
+14-infirmerie.jpg         → Infirmerie et espaces
+15-morgue.jpg             → Vue extérieure bloc annexe
+16-institut-nuit.jpg      → Institut Islamique (vue nocturne) ⭐ TRÈS BELLE
+
+══════════════════════════════════════════════════════
+COMMENT INTÉGRER DANS VOS PAGES HTML
+══════════════════════════════════════════════════════
+
+ÉTAPE 1 — Copier le dossier "images" dans votre dépôt GitHub
+─────────────────────────────────────────────────────────────
+1. Créez un dossier "images" dans votre dossier kst-pikine-site
+   (le dossier qui contient vos fichiers HTML)
+2. Copiez toutes les images .jpg dans ce dossier "images"
+3. Dans GitHub Desktop : Commit "Ajout images du projet" → Push
+
+ÉTAPE 2 — Ajouter les images dans vos pages HTML
+──────────────────────────────────────────────────
+
+A) HERO DE LA PAGE D'ACCUEIL (index.html)
+   Trouvez la section <section class="hero"> et modifiez :
+   
+   Avant :
+   <section class="hero">
+   
+   Après :
+   <section class="hero" style="background-image:url('images/04-mosquee-nuit.jpg');
+   background-size:cover;background-position:center;">
+   
+   (L'overlay vert existant masquera partiellement l'image — rendu magnifique)
+
+
+B) GALERIE DANS LA PAGE COMPLEXE (complexe.html)
+   Ajoutez cette section avant le footer :
+   
+   <section class="s-pad creme-bg">
+     <div class="container">
+       <div class="tag">Galerie</div>
+       <h2 class="h2">Rendus <em>architecturaux</em></h2>
+       <div class="gold-rule"></div>
+       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:1.5rem">
+         <img src="images/04-mosquee-nuit.jpg" alt="Mosquée de nuit"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+         <img src="images/11-residence-nuit.jpg" alt="Résidence et mosquée"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+         <img src="images/07-vue-3d-aerienne.jpg" alt="Vue aérienne 3D"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+         <img src="images/10-residence-jour.jpg" alt="Résidence"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+         <img src="images/16-institut-nuit.jpg" alt="Institut Islamique"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+         <img src="images/12-esplanade.jpg" alt="Esplanade"
+              style="width:100%;height:220px;object-fit:cover;border-radius:3px">
+       </div>
+     </div>
+   </section>
+
+
+C) IMAGE DANS LA PAGE PROJET (projet.html)
+   Ajoutez cette image dans la section contexte :
+   
+   <img src="images/01-hero-complexe.jpg" alt="Vue du complexe"
+        style="width:100%;border-radius:4px;margin-top:1rem">
+
+
+D) PAGE DONS (dons.html) — image inspirante
+   Ajoutez en haut du widget de don :
+   
+   <img src="images/04-mosquee-nuit.jpg" alt="La future mosquée de Pikine"
+        style="width:100%;height:180px;object-fit:cover;border-radius:3px;margin-bottom:1rem">
+
+
+══════════════════════════════════════════════════════
+IMAGES RECOMMANDÉES PAR PAGE
+══════════════════════════════════════════════════════
+
+Page d'accueil (index.html)      → 04-mosquee-nuit.jpg (hero background)
+Page Le Projet (projet.html)     → 01-hero-complexe.jpg
+Page Le Complexe (complexe.html) → Galerie avec 6 images (voir ci-dessus)
+Page Dons (dons.html)            → 04-mosquee-nuit.jpg
+Page Actualités (actualites.html)→ 11-residence-nuit.jpg
+Page Contact (contact.html)      → 03-vue-generale.jpg
+
+══════════════════════════════════════════════════════
