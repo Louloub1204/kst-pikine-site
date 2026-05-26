@@ -287,23 +287,22 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 .ptier{border-radius:4px;overflow:hidden}
 @media(max-width:900px){.dons-grid,.bene-grid{grid-template-columns:1fr}.ptiers{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ptiers{grid-template-columns:1fr}}
+</style>
 
 <style>
-.lang-btn.active{background:var(--or)!important;border-color:var(--or)!important;color:var(--brun)!important}
-.lang-btn:hover{background:rgba(201,168,76,0.2)!important;color:var(--or-clair)!important}
-[dir="rtl"] .mob-menu a{text-align:right}
-[dir="rtl"] .nav-brand{flex-direction:row-reverse}
-[dir="rtl"] .footer-grid{direction:rtl}
-</style>
+[dir="rtl"] body { font-family: 'Amiri', 'Raleway', sans-serif; }
+[dir="rtl"] .nav-brand { flex-direction: row-reverse; }
+[dir="rtl"] .footer-grid { direction: rtl; }
+[dir="rtl"] .toc a { direction: rtl; }
 </style>
 </head>
 <body>
 <div id="nav-root"></div>
 <div class="page-hero-bg" style="position:relative;overflow:hidden;background:linear-gradient(155deg,#040f07,#0d3320,#1A5C3A)">
   <div style="position:absolute;inset:0;background-image:url('images/11-residence-nuit.jpg');background-size:cover;background-position:center;opacity:0.22;z-index:0"></div>
-  <div class="breadcrumb"><a href="index.html" data-i18n="nav.home">Accueil</a> › <span>Contribuer</span></div>
-  <div class="ph-tag"><span data-i18n="dons.hero.tag">Participer au projet</span></div>
-  <h1 class="ph-title"><span data-i18n="dons.hero.title">Contribuer au Projet</span></h1>
+  <div class="breadcrumb"><a href="index.html" data-t="nav_home">Accueil</a> › <span>Contribuer</span></div>
+  <div class="ph-tag"><span data-t="dons_tag">Participer au projet</span></div>
+  <h1 class="ph-title"><span data-t="page_dons">Contribuer au Projet</span></h1>
   <p class="ph-sub">Votre don, quel que soit son montant, est un acte de foi qui construit concrètement le complexe Keur-Serigne Touba de Pikine.</p>
   <p style="font-family:'Amiri',serif;font-size:1.1rem;color:rgba(242,223,160,0.65);margin-top:0.7rem;position:relative;z-index:1">« Barakallahu fikoum » · جزاكم الله خيرًا</p>
 </div>
@@ -344,7 +343,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
             <div><label class="flabel">Email *</label><input class="finput" type="email" placeholder="votre@email.com"></div>
             <div><label class="flabel">Téléphone *</label><input class="finput" type="tel" placeholder="+221 …"></div>
             <div><label class="flabel">Mode de paiement</label><select class="fselect"><option>Choisir…</option><option>Wave — +221 77 796 05 06</option><option>Orange Money — +221 77 796 05 06</option><option>Virement BIS — N° SN079 01113 251182981001</option><option>Virement international</option></select></div>
-            <button class="btn-or" style="justify-content:center" onclick="submitDon()">data-i18n="don.btn.validate">💛 Valider ma contribution</button>
+            <button class="btn-or" style="justify-content:center" onclick="submitDon()"><span data-t="dons_btn">💛 Valider ma contribution</span></button>
           </div>
           <p style="font-size:0.63rem;color:#8a7a5a;margin-top:0.5rem">Un reçu officiel vous sera remis. Paiement sécurisé.</p>
         </div>
@@ -426,39 +425,26 @@ var NAV_HTML = `<nav>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
-    <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
-    <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
-    <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
-    <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
-    <li><a href="dons.html" data-i18n="nav.donate">Contribuer</a></li>
-    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="index.html" data-t="nav_home">Accueil</a></li>
+    <li><a href="projet.html" data-t="nav_project">Le Projet</a></li>
+    <li><a href="complexe.html" data-t="nav_complex">Le Complexe</a></li>
+    <li><a href="gouvernance.html" data-t="nav_gov">Gouvernance</a></li>
+    <li><a href="actualites.html" data-t="nav_news">Actualités</a></li>
+    <li><a href="dons.html" data-t="nav_donate">Contribuer</a></li>
+    <li><a href="contact.html" data-t="nav_contact">Contact</a></li>
   </ul>
-  
-<div class="lang-selector" style="display:flex;align-items:center;gap:4px;margin-left:0.8rem;border-left:1px solid rgba(201,168,76,0.3);padding-left:0.8rem">
-  <button class="lang-btn active" data-lang="fr"
-    onclick="I18N.apply('fr')"
-    style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
-    FR
-  </button>
-  <button class="lang-btn" data-lang="en"
-    onclick="I18N.apply('en')"
-    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
-    EN
-  </button>
-  <button class="lang-btn" data-lang="ar"
-    onclick="I18N.apply('ar')"
-    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
-    عر
-  </button>
+  <div style="display:flex;align-items:center;gap:3px;margin-left:0.7rem;padding-left:0.7rem;border-left:1px solid rgba(201,168,76,0.3)">
+  <button id="btn-fr" onclick="setLang('fr')" style="background:var(--or);border:1px solid var(--or);color:var(--brun);font-family:'Raleway',sans-serif;font-size:0.66rem;font-weight:700;padding:0.26rem 0.55rem;border-radius:2px;cursor:pointer;transition:all 0.2s">FR</button>
+  <button id="btn-en" onclick="setLang('en')" style="background:transparent;border:1px solid rgba(201,168,76,0.22);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.66rem;font-weight:700;padding:0.26rem 0.55rem;border-radius:2px;cursor:pointer;transition:all 0.2s">EN</button>
+  <button id="btn-ar" onclick="setLang('ar')" style="background:transparent;border:1px solid rgba(201,168,76,0.22);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.66rem;font-weight:700;padding:0.26rem 0.55rem;border-radius:2px;cursor:pointer;transition:all 0.2s">عر</button>
 </div>
-  <a class="nav-cta" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
+  <a class="nav-cta" href="dons.html"><span data-t="nav_cta">💛 Faire un don</span></a>
   <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html" data-i18n="nav.home">🏠 Accueil</a>
+  <a href="index.html">🏠 Accueil</a>
   <a href="projet.html">🕌 Le Projet</a>
   <a href="complexe.html">🏛️ Le Complexe</a>
   <a href="gouvernance.html">👥 Gouvernance</a>
@@ -482,17 +468,17 @@ var FOOTER_HTML = `<footer>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
-        <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
-        <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
-        <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
-        <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
+        <li><a href="index.html" data-t="nav_home">Accueil</a></li>
+        <li><a href="projet.html" data-t="nav_project">Le Projet</a></li>
+        <li><a href="complexe.html" data-t="nav_complex">Le Complexe</a></li>
+        <li><a href="gouvernance.html" data-t="nav_gov">Gouvernance</a></li>
+        <li><a href="actualites.html" data-t="nav_news">Actualités</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Participer</h4>
       <ul>
-        <li><a href="dons.html" data-i18n="nav.cta">💛 Faire un don</a></li>
+        <li><a href="dons.html">💛 Faire un don</a></li>
         <li><a href="dons.html">🤝 Bénévolat</a></li>
         <li><a href="dons.html">🏢 Partenariat</a></li>
         <li><a href="dons.html">🌍 Diaspora</a></li>
@@ -512,7 +498,7 @@ var FOOTER_HTML = `<footer>
     </div>
   </div>
   <div class="footer-bottom">
-    <p><span data-i18n="footer.copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
+    <p><span data-t="footer_copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
     <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
   </div>
 </footer>`;
@@ -560,5 +546,28 @@ function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
 </script>
 <script>window.addEventListener('load',function(){animBar('pbar2','ppct2',2)})</script>
 
-<script src="translations.js"></script>
+<script>
+var T = {"fr": {"nav_home": "Accueil", "nav_project": "Le Projet", "nav_complex": "Le Complexe", "nav_gov": "Gouvernance", "nav_news": "Actualités", "nav_donate": "Contribuer", "nav_contact": "Contact", "nav_cta": "💛 Faire un don", "hero_badge": "Projet de Construction · Pikine · Dakar · Sénégal", "hero_loc": "◆ Pikine · Dakar · Sénégal ◆", "hero_desc": "Un complexe multidimensionnel alliant spiritualité, éducation, culture et développement économique — au cœur de Pikine, pour la communauté mouride et les générations futures.", "hero_btn1": "💛 Contribuer maintenant", "hero_btn2": "Découvrir le projet →", "kpi1": "F CFA — Budget total", "kpi2": "Fidèles — Capacité prière", "kpi3": "Personnes — Esplanade", "kpi4": "Habitants — Pikine", "urg_title": "Chaque don rapproche la mosquée de son ouverture", "urg_sub": "La communauté mouride de Pikine attend ce lieu sacré. Votre contribution compte.", "urg_btn1": "💛 Faire un don", "urg_btn2": "🤝 Devenir partenaire", "prog_tag": "Financement en cours", "prog_atteint": "du financement atteint", "prog_phase1": "Phase 1 — Fondations 25%", "prog_phase2": "Phase 2 — Gros œuvre 60%", "prog_phase3": "Phase 3 — Finitions 100%", "don_tag": "Votre contribution", "don_title": "Bâtissons ensemble la Maison de Dieu", "don_desc": "Chaque don, aussi petit soit-il, est un acte de foi et de solidarité. La ville de Pikine, avec ses 760 000 habitants, manque cruellement d'une grande mosquée.", "don_quote": "« Le travail est une prière. »", "don_quote_auth": "— Cheikh Ahmadou Bamba Mbacké, Fondateur du Mouridisme", "don_widget_tag": "Faire un don", "don_widget_title": "Choisissez votre contribution", "don_widget_sub": "Chaque montant correspond à un élément concret du complexe", "don_btn": "💛 Valider ma contribution", "don_secure": "Un reçu officiel vous sera remis · Paiement 100% sécurisé", "gallery_tag": "Rendus architecturaux", "gallery_title": "Le complexe en images", "gallery_see": "Voir toutes les zones du complexe →", "temo_tag": "La voix de la communauté", "temo_title": "Pourquoi ils soutiennent le projet", "temo1": "Ce complexe, c'est le rêve de toute la communauté mouride de Pikine. Enfin un lieu digne pour prier, apprendre et se retrouver.", "temo1_name": "Mamadou S.", "temo1_place": "Chef de quartier, Pikine Est", "temo2": "Depuis Paris, je contribue chaque mois. Je veux que mes enfants puissent un jour prier dans cette mosquée.", "temo2_name": "Aminata D.", "temo2_place": "Diaspora mouride, Paris", "temo3": "L'Institut Islamique va changer la vie de nos jeunes : éducation religieuse ET formation numérique. C'est l'avenir.", "temo3_name": "Ousmane B.", "temo3_place": "Enseignant, Pikine", "cta_tag": "Rejoindre le mouvement", "cta_title": "Bâtissons ensemble la Maison de Dieu", "cta_desc": "Chaque brique posée, chaque colonne érigée porte l'empreinte de votre foi et de votre générosité.", "cta_btn1": "💛 Faire un don maintenant", "cta_btn2": "✉️ Nous contacter", "cta_btn3": "🕌 En savoir plus", "contrib_tag": "Communauté", "contrib_title": "Contributions récentes", "contrib_total": "collectés à ce jour · Objectif : 5 milliards F CFA", "tier_tag": "Rejoindre le mouvement", "tier_title": "À partir de 5 000 F CFA", "tier_see": "💛 Voir toutes les options de don", "tier_contact": "Contacter le comité →", "snap_tag": "Le projet en bref", "snap_title": "Un complexe complet pour Pikine", "snap_see": "Découvrir tout le complexe →", "z1_title": "Mosquée & Minaret", "z1_desc": "2 401 fidèles en simultané, climatisation, acoustique professionnelle.", "z1_link": "Voir la zone culte →", "z2_title": "Institut Islamique", "z2_desc": "5 niveaux, 1 196 m², bibliothèque numérique, auditorium 600 m².", "z2_link": "Voir l'institut →", "z3_title": "Résidence du Khalife", "z3_desc": "20 chambres pour le Khalife Général et délégations. Jardin privé 300 m².", "z3_link": "Voir la résidence →", "z4_title": "Esplanade 4 800 m²", "z4_desc": "Espace polyvalent pour 5 000 personnes. Éclairage solaire.", "z4_link": "Voir l'esplanade →", "z5_title": "Studio Multimédia", "z5_desc": "Salle acoustique pour Xassaïdes, studio HD pour contenu religieux.", "z5_link": "Voir le studio →", "z6_title": "Infirmerie & Santé", "z6_desc": "Clinique, pharmacie (UCAD), morgue islamique. Partenariats hospitaliers.", "z6_link": "Voir les services →", "page_projet": "Le Projet", "page_complexe": "Le Complexe", "page_gov": "Gouvernance & Administration", "page_actu": "Actualités du projet", "page_dons": "Contribuer au Projet", "page_contact": "Contactez le Comité", "footer_copy": "© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés", "send_msg": "Envoyer le message ✦", "subscribe": "S'abonner ✦", "donate_now": "💛 Faire un don maintenant", "contact_us": "✉️ Nous contacter", "dons_tag": "Participer au projet", "dons_btn": "💛 Valider ma contribution", "bene_tag": "Au-delà du don financier", "bene_title": "Contribuer par le bénévolat", "part_tag": "Entreprises & Institutions", "part_title": "Devenir partenaire", "contact_tag": "Nous rejoindre", "contact_form_tag": "Formulaire", "contact_send": "Envoyer le message ✦", "f_nav": "Navigation", "f_part": "Participer", "f_pay": "Paiement direct"}, "en": {"nav_home": "Home", "nav_project": "The Project", "nav_complex": "The Complex", "nav_gov": "Governance", "nav_news": "News", "nav_donate": "Contribute", "nav_contact": "Contact", "nav_cta": "💛 Donate", "hero_badge": "Construction Project · Pikine · Dakar · Senegal", "hero_loc": "◆ Pikine · Dakar · Senegal ◆", "hero_desc": "A multidimensional complex combining spirituality, education, culture and economic development — at the heart of Pikine, for the Mouride community and future generations.", "hero_btn1": "💛 Contribute now", "hero_btn2": "Discover the project →", "kpi1": "FCFA — Total budget", "kpi2": "Worshippers capacity", "kpi3": "People — Esplanade", "kpi4": "Residents — Pikine", "urg_title": "Every donation brings the mosque closer to opening", "urg_sub": "The Mouride community of Pikine awaits this sacred place. Your contribution matters.", "urg_btn1": "💛 Make a donation", "urg_btn2": "🤝 Become a partner", "prog_tag": "Fundraising in progress", "prog_atteint": "of funding reached", "prog_phase1": "Phase 1 — Foundations 25%", "prog_phase2": "Phase 2 — Structure 60%", "prog_phase3": "Phase 3 — Finishes 100%", "don_tag": "Your contribution", "don_title": "Let us build the House of God together", "don_desc": "Every donation, however small, is an act of faith and solidarity. The city of Pikine, with its 760,000 inhabitants, greatly lacks a large mosque.", "don_quote": "« Work is a prayer. »", "don_quote_auth": "— Cheikh Ahmadou Bamba Mbacké, Founder of Mouridism", "don_widget_tag": "Make a donation", "don_widget_title": "Choose your contribution", "don_widget_sub": "Each amount corresponds to a concrete element of the complex", "don_btn": "💛 Confirm my contribution", "don_secure": "An official receipt will be issued · 100% secure payment", "gallery_tag": "Architectural renders", "gallery_title": "The complex in images", "gallery_see": "See all complex zones →", "temo_tag": "The community's voice", "temo_title": "Why they support the project", "temo1": "This complex is the dream of the entire Mouride community of Pikine. Finally a worthy place to pray, learn and gather.", "temo1_name": "Mamadou S.", "temo1_place": "Neighborhood chief, Pikine East", "temo2": "From Paris, I contribute every month. I want my children to one day pray in this mosque.", "temo2_name": "Aminata D.", "temo2_place": "Mouride diaspora, Paris", "temo3": "The Islamic Institute will change the lives of our youth: religious education AND digital training. That is the future.", "temo3_name": "Ousmane B.", "temo3_place": "Teacher, Pikine", "cta_tag": "Join the movement", "cta_title": "Let us build the House of God together", "cta_desc": "Every brick laid, every column erected bears the mark of your faith and generosity.", "cta_btn1": "💛 Donate now", "cta_btn2": "✉️ Contact us", "cta_btn3": "🕌 Learn more", "contrib_tag": "Community", "contrib_title": "Recent contributions", "contrib_total": "raised to date · Target: 5 billion FCFA", "tier_tag": "Join the movement", "tier_title": "From 5,000 FCFA", "tier_see": "💛 See all donation options", "tier_contact": "Contact the committee →", "snap_tag": "The project in brief", "snap_title": "A complete complex for Pikine", "snap_see": "Discover the full complex →", "z1_title": "Mosque & Minaret", "z1_desc": "2,401 worshippers simultaneously, air conditioning, professional acoustics.", "z1_link": "See worship area →", "z2_title": "Islamic Institute", "z2_desc": "5 levels, 1,196 m², digital library, 600 m² auditorium.", "z2_link": "See the institute →", "z3_title": "Khalife's Residence", "z3_desc": "20 rooms for the Khalife General and delegations. Private garden 300 m².", "z3_link": "See the residence →", "z4_title": "Esplanade 4,800 m²", "z4_desc": "Multipurpose space for 5,000 people. Solar lighting.", "z4_link": "See the esplanade →", "z5_title": "Multimedia Studio", "z5_desc": "Acoustic hall for Xassaides, HD studio for religious content.", "z5_link": "See the studio →", "z6_title": "Infirmary & Health", "z6_desc": "Clinic, pharmacy (UCAD), Islamic morgue. Hospital partnerships.", "z6_link": "See the services →", "page_projet": "The Project", "page_complexe": "The Complex", "page_gov": "Governance & Administration", "page_actu": "Project News", "page_dons": "Contribute to the Project", "page_contact": "Contact the Committee", "footer_copy": "© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak of Pikine — All rights reserved", "send_msg": "Send message ✦", "subscribe": "Subscribe ✦", "donate_now": "💛 Donate now", "contact_us": "✉️ Contact us", "dons_tag": "Join the project", "dons_btn": "💛 Confirm my contribution", "bene_tag": "Beyond financial donation", "bene_title": "Contribute through volunteering", "part_tag": "Companies & Institutions", "part_title": "Become a partner", "contact_tag": "Join us", "contact_form_tag": "Form", "contact_send": "Send message ✦", "f_nav": "Navigation", "f_part": "Participate", "f_pay": "Direct payment"}, "ar": {"nav_home": "الرئيسية", "nav_project": "المشروع", "nav_complex": "المجمع", "nav_gov": "الحوكمة", "nav_news": "الأخبار", "nav_donate": "المساهمة", "nav_contact": "اتصل بنا", "nav_cta": "💛 تبرع الآن", "hero_badge": "مشروع البناء · بيكين · داكار · السنغال", "hero_loc": "◆ بيكين · داكار · السنغال ◆", "hero_desc": "مجمع متعدد الأبعاد يجمع بين الروحانية والتعليم والثقافة والتنمية الاقتصادية — في قلب بيكين، لمجتمع المريدين وللأجيال القادمة.", "hero_btn1": "💛 ساهم الآن", "hero_btn2": "اكتشف المشروع ←", "kpi1": "فرنك — الميزانية الإجمالية", "kpi2": "مصلٍّ — الطاقة الاستيعابية", "kpi3": "شخص — الساحة", "kpi4": "ساكن — بيكين", "urg_title": "كل تبرع يقرّب المسجد من افتتاحه", "urg_sub": "مجتمع المريدين في بيكين ينتظر هذا المكان المقدس. مساهمتك مهمة.", "urg_btn1": "💛 تبرع", "urg_btn2": "🤝 كن شريكاً", "prog_tag": "جمع التبرعات جارٍ", "prog_atteint": "من التمويل تم جمعه", "prog_phase1": "المرحلة 1 — الأساسات 25%", "prog_phase2": "المرحلة 2 — الهيكل 60%", "prog_phase3": "المرحلة 3 — التشطيبات 100%", "don_tag": "مساهمتك", "don_title": "لنبنِ بيت الله معاً", "don_desc": "كل تبرع، مهما كان صغيراً، هو عمل من أعمال الإيمان والتضامن. تفتقر مدينة بيكين إلى مسجد كبير.", "don_quote": "« العمل عبادة. »", "don_quote_auth": "— الشيخ أحمدو بمبا مبكي، مؤسس الطريقة المريدية", "don_widget_tag": "قدّم تبرعاً", "don_widget_title": "اختر مساهمتك", "don_widget_sub": "كل مبلغ يتوافق مع عنصر ملموس من المجمع", "don_btn": "💛 تأكيد مساهمتي", "don_secure": "سيتم إصدار إيصال رسمي · دفع آمن 100%", "gallery_tag": "التصاميم المعمارية", "gallery_title": "المجمع بالصور", "gallery_see": "انظر جميع مناطق المجمع ←", "temo_tag": "صوت المجتمع", "temo_title": "لماذا يدعمون المشروع", "temo1": "هذا المجمع حلم مجتمع المريدين بأكمله في بيكين. أخيراً مكان لائق للصلاة والتعلم والتلاقي.", "temo1_name": "ممادو س.", "temo1_place": "رئيس الحي، بيكين الشرقية", "temo2": "من باريس، أساهم كل شهر. أريد أن يصلي أطفالي يوماً ما في هذا المسجد.", "temo2_name": "أمينتا د.", "temo2_place": "المريدون في المهجر، باريس", "temo3": "سيغير المعهد الإسلامي حياة شبابنا: التعليم الديني والتدريب الرقمي. هذا هو المستقبل.", "temo3_name": "عثمان ب.", "temo3_place": "معلم، بيكين", "cta_tag": "انضم إلى الحركة", "cta_title": "لنبنِ بيت الله معاً", "cta_desc": "كل طوبة توضع، كل عمود يُشيَّد يحمل بصمة إيمانك وكرمك.", "cta_btn1": "💛 تبرع الآن", "cta_btn2": "✉️ تواصل معنا", "cta_btn3": "🕌 اعرف المزيد", "contrib_tag": "المجتمع", "contrib_title": "المساهمات الأخيرة", "contrib_total": "تم جمعه حتى الآن · الهدف: 5 مليارات فرنك", "tier_tag": "انضم إلى الحركة", "tier_title": "ابتداءً من 5000 فرنك", "tier_see": "💛 انظر جميع خيارات التبرع", "tier_contact": "تواصل مع اللجنة ←", "snap_tag": "المشروع باختصار", "snap_title": "مجمع متكامل لبيكين", "snap_see": "اكتشف المجمع كاملاً ←", "z1_title": "المسجد والمئذنة", "z1_desc": "2401 مصلٍّ في وقت واحد، تكييف هواء، صوتيات احترافية.", "z1_link": "انظر منطقة العبادة ←", "z2_title": "المعهد الإسلامي", "z2_desc": "5 طوابق، 1196 م²، مكتبة رقمية، قاعة مؤتمرات 600 م².", "z2_link": "انظر المعهد ←", "z3_title": "إقامة الخليفة", "z3_desc": "20 غرفة للخليفة العام والوفود. حديقة خاصة 300 م².", "z3_link": "انظر الإقامة ←", "z4_title": "الساحة 4800 م²", "z4_desc": "فضاء متعدد الاستخدامات لـ 5000 شخص. إضاءة شمسية.", "z4_link": "انظر الساحة ←", "z5_title": "الاستوديو الإعلامي", "z5_desc": "قاعة صوتية للخصائد، استوديو HD للمحتوى الديني.", "z5_link": "انظر الاستوديو ←", "z6_title": "المستوصف والصحة", "z6_desc": "عيادة، صيدلية (UCAD)، مغسلة إسلامية. شراكات مستشفيات.", "z6_link": "انظر الخدمات ←", "page_projet": "المشروع", "page_complexe": "المجمع", "page_gov": "الحوكمة والإدارة", "page_actu": "أخبار المشروع", "page_dons": "ساهم في المشروع", "page_contact": "تواصل مع اللجنة", "footer_copy": "© 2025 — كير سريني توبا البقعة المباركة بيكين — جميع الحقوق محفوظة", "send_msg": "أرسل الرسالة ✦", "subscribe": "اشترك ✦", "donate_now": "💛 تبرع الآن", "contact_us": "✉️ تواصل معنا", "dons_tag": "المشاركة في المشروع", "dons_btn": "💛 تأكيد مساهمتي", "bene_tag": "ما وراء التبرع المالي", "bene_title": "ساهم بالتطوع", "part_tag": "الشركات والمؤسسات", "part_title": "كن شريكاً", "contact_tag": "انضم إلينا", "contact_form_tag": "النموذج", "contact_send": "أرسل الرسالة ✦", "f_nav": "التنقل", "f_part": "المشاركة", "f_pay": "الدفع المباشر"}};
+var lang = localStorage.getItem('kst_lang') || 'fr';
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('kst_lang', l);
+  document.documentElement.lang = l;
+  document.documentElement.dir  = l === 'ar' ? 'rtl' : 'ltr';
+  // Appliquer toutes les traductions
+  document.querySelectorAll('[data-t]').forEach(function(el) {
+    var k = el.getAttribute('data-t');
+    if (T[l] && T[l][k] !== undefined) el.textContent = T[l][k];
+  });
+  // Mettre à jour les boutons de langue
+  ['fr','en','ar'].forEach(function(x) {
+    var b = document.getElementById('btn-'+x);
+    if (!b) return;
+    if (x === l) { b.style.background='var(--or)'; b.style.borderColor='var(--or)'; b.style.color='var(--brun)'; }
+    else { b.style.background='transparent'; b.style.borderColor='rgba(201,168,76,0.22)'; b.style.color='#9ab8a8'; }
+  });
+}
+document.addEventListener('DOMContentLoaded', function() { setLang(lang); });
+</script>
 </body></html>
