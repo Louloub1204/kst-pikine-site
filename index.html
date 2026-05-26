@@ -322,6 +322,14 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 .temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem}
 @media(max-width:900px){.don-grid-home{grid-template-columns:1fr;gap:2rem}.snap-grid,.temo-grid{grid-template-columns:1fr 1fr}.hero-kpis{gap:1.5rem}}
 @media(max-width:560px){.snap-grid,.temo-grid,.urg-inner{grid-template-columns:1fr;flex-direction:column}}
+
+<style>
+.lang-btn.active{background:var(--or)!important;border-color:var(--or)!important;color:var(--brun)!important}
+.lang-btn:hover{background:rgba(201,168,76,0.2)!important;color:var(--or-clair)!important}
+[dir="rtl"] .mob-menu a{text-align:right}
+[dir="rtl"] .nav-brand{flex-direction:row-reverse}
+[dir="rtl"] .footer-grid{direction:rtl}
+</style>
 </style>
 </head>
 <body>
@@ -330,16 +338,16 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 <section class="hero">
   <div class="hero-geo"></div>
   <div style="position:absolute;inset:0;background-image:url('images/04-mosquee-nuit.jpg');background-size:cover;background-position:center;opacity:0.18;z-index:0"></div>
-  <div class="hero-badge">Projet de Construction · Pikine · Dakar · Sénégal</div>
+  <div class="hero-badge"><span data-i18n="hero.badge">Projet de Construction · Pikine · Dakar · Sénégal</span></div>
   <div class="hero-ar">كير سريني توبا</div>
   <div class="hero-ar-sub">البقعة المباركة — بيكين</div>
   <div class="divider-or"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
   <h1 class="hero-title">Keur-Serigne Touba<br><em>Al Buqatul Mubaarak</em></h1>
-  <div class="hero-loc">◆ Pikine · Dakar · Sénégal ◆</div>
-  <p class="hero-desc">Un complexe multidimensionnel alliant spiritualité, éducation, culture et développement économique — au cœur de Pikine, pour la communauté mouride et les générations futures.</p>
+  <div class="hero-loc"><span data-i18n="hero.location">◆ Pikine · Dakar · Sénégal ◆</span></div>
+  <p class="hero-desc"><span data-i18n="hero.desc">Un complexe multidimensionnel alliant spiritualité, éducation, culture et développement économique — au cœur de Pikine, pour la communauté mouride et les générations futures.</span></p>
   <div class="hero-actions">
-    <a class="btn-or" href="dons.html">💛 Contribuer maintenant</a>
-    <a class="btn-vide" href="projet.html">Découvrir le projet →</a>
+    <a class="btn-or" href="dons.html">data-i18n="hero.btn.donate">💛 Contribuer maintenant</a>
+    <a class="btn-vide" href="projet.html">data-i18n="hero.btn.discover">Découvrir le projet →</a>
   </div>
   <div class="hero-kpis">
     <div style="text-align:center"><div class="kpi-val">5<small> Mds</small></div><div class="kpi-lbl">F CFA — Budget total</div></div>
@@ -355,12 +363,12 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
     <div class="urg-txt">
       <div class="urg-icon">🌙</div>
       <div>
-        <h3>Chaque don rapproche la mosquée de son ouverture</h3>
+        <h3><span data-i18n="urgence.title">Chaque don rapproche la mosquée de son ouverture</span></h3>
         <p>La communauté mouride de Pikine attend ce lieu sacré depuis des années. Votre contribution compte.</p>
       </div>
     </div>
     <div class="urg-actions">
-      <a class="btn-or" href="dons.html">💛 Faire un don</a>
+      <a class="btn-or" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
       <a class="btn-vide" href="dons.html">🤝 Devenir partenaire</a>
     </div>
   </div>
@@ -377,7 +385,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
       </div>
       <div style="text-align:right">
         <div class="pbar-pct" id="ppct">0%</div>
-        <div style="font-size:0.66rem;color:var(--texte-doux)">du financement atteint</div>
+        <div style="font-size:0.66rem;color:var(--texte-doux)"><span data-i18n="prog.atteint">du financement atteint</span></div>
       </div>
     </div>
     <div class="pbar-track"><div class="pbar-fill" id="pbar"></div></div>
@@ -395,9 +403,9 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
     <div class="don-grid-home">
       <div class="don-home-intro">
         <div class="tag">Votre contribution</div>
-        <h2 class="h2">Bâtissons ensemble la <em>Maison de Dieu</em></h2>
+        <h2 class="h2"><span data-i18n="don.title">Bâtissons ensemble la </span><em data-i18n="don.title">Maison de Dieu</em></h2>
         <div class="gold-rule"></div>
-        <p>Chaque don, aussi petit soit-il, est un acte de foi et de solidarité. La ville de Pikine, avec ses 760 000 habitants, manque cruellement de grandes mosquées. Il arrive souvent que des fidèles prient dans les rues et des espaces inadaptés. Votre contribution change cette réalité.</p>
+        <p>Chaque don, aussi petit soit-il, est un acte de foi et de solidarité. La ville de Pikine, avec ses 760 000 habitants, manque cruellement d'une grande mosquée. Les fidèles prient dans les rues et des espaces inadaptés. Votre contribution change cette réalité.</p>
         <p>Depuis le Sénégal ou la diaspora mondiale, rejoignez des centaines de fidèles déjà engagés pour ce projet historique.</p>
         <div class="don-quote">
           « Le travail est une prière. »
@@ -533,7 +541,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 <!-- GALERIE INDEX -->
 <section class="s-pad blanc-bg">
   <div class="container">
-    <div class="tag">Rendus architecturaux</div>
+    <div class="tag"><span data-i18n="gallery.tag">Rendus architecturaux</span></div>
     <h2 class="h2">Le complexe en <em>images</em></h2>
     <div class="gold-rule"></div>
     <p style="color:var(--texte-doux);font-size:0.93rem;line-height:1.8;margin-bottom:1.8rem;max-width:580px">Découvrez les rendus 3D du futur complexe Keur-Serigne Touba Al Buqatul Mubaarak de Pikine.</p>
@@ -601,8 +609,8 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 
 <section class="s-pad creme-bg">
   <div class="container">
-    <div class="tag">La voix de la communauté</div>
-    <h2 class="h2">Pourquoi ils <em>soutiennent</em> le projet</h2>
+    <div class="tag"><span data-i18n="temo.tag">La voix de la communauté</span></div>
+    <h2 class="h2"><span data-i18n="temo.title">Pourquoi ils soutiennent le projet</span></h2>
     <div class="gold-rule"></div>
     <div class="temo-grid">
       <div class="temo-card"><div class="temo-stars">★★★★★</div><p class="temo-quote">« Ce complexe, c'est le rêve de toute la communauté mouride de Pikine. Enfin un lieu digne pour prier, apprendre et se retrouver. »</p><div class="temo-author"><div class="temo-avatar">MS</div><div><div class="temo-name">Mamadou S.</div><div class="temo-place">Chef de quartier, Pikine Est</div></div></div></div>
@@ -615,7 +623,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 <!-- GALERIE PHOTOS -->
 <section class="s-pad creme-bg">
   <div class="container">
-    <div class="tag">Rendus architecturaux</div>
+    <div class="tag"><span data-i18n="gallery.tag">Rendus architecturaux</span></div>
     <h2 class="h2">Galerie du <em>projet</em></h2>
     <div class="gold-rule"></div>
     <p style="color:var(--texte-doux);max-width:580px;line-height:1.8;font-size:0.93rem;margin-bottom:1.8rem">Découvrez les rendus 3D et visualisations architecturales du complexe Keur-Serigne Touba Al Buqatul Mubaarak de Pikine.</p>
@@ -658,7 +666,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
     <h2 class="h2 h2-light">Bâtissons ensemble<br>la <em>Maison de Dieu</em></h2>
     <p style="color:#b0cfc0;max-width:490px;margin:0 auto 2rem;line-height:1.8;font-size:0.95rem">Chaque brique posée, chaque colonne érigée, chaque fenêtre installée porte l'empreinte de votre foi et de votre générosité.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a class="btn-or" href="dons.html">💛 Faire un don maintenant</a>
+      <a class="btn-or" href="dons.html">data-i18n="cta.btn1">💛 Faire un don maintenant</a>
       <a class="btn-vide" href="contact.html">✉️ Nous contacter</a>
       <a class="btn-vide" href="projet.html">🕌 En savoir plus</a>
     </div>
@@ -677,28 +685,46 @@ var NAV_HTML = `<nav>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="projet.html">Le Projet</a></li>
-    <li><a href="complexe.html">Le Complexe</a></li>
-    <li><a href="gouvernance.html">Gouvernance</a></li>
-    <li><a href="actualites.html">Actualités</a></li>
-    <li><a href="dons.html">Contribuer</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+    <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+    <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+    <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
+    <li><a href="dons.html" data-i18n="nav.donate">Contribuer</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="dons.html">💛 Faire un don</a>
+  
+<div class="lang-selector" style="display:flex;align-items:center;gap:4px;margin-left:0.8rem;border-left:1px solid rgba(201,168,76,0.3);padding-left:0.8rem">
+  <button class="lang-btn active" data-lang="fr"
+    onclick="I18N.apply('fr')"
+    style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    FR
+  </button>
+  <button class="lang-btn" data-lang="en"
+    onclick="I18N.apply('en')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    EN
+  </button>
+  <button class="lang-btn" data-lang="ar"
+    onclick="I18N.apply('ar')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    عر
+  </button>
+</div>
+  <a class="nav-cta" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
   <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">🏠 Accueil</a>
+  <a href="index.html" data-i18n="nav.home">🏠 Accueil</a>
   <a href="projet.html">🕌 Le Projet</a>
   <a href="complexe.html">🏛️ Le Complexe</a>
   <a href="gouvernance.html">👥 Gouvernance</a>
   <a href="actualites.html">📰 Actualités</a>
   <a href="dons.html">💚 Contribuer</a>
   <a href="contact.html">✉️ Contact</a>
-  <a href="dons.html" class="mob-don">💛 Faire un don maintenant</a>
+  <a href="dons.html" class="mob-don">data-i18n="cta.btn1">💛 Faire un don maintenant</a>
 </div>`;
 
 var FOOTER_HTML = `<footer>
@@ -715,17 +741,17 @@ var FOOTER_HTML = `<footer>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projet.html">Le Projet</a></li>
-        <li><a href="complexe.html">Le Complexe</a></li>
-        <li><a href="gouvernance.html">Gouvernance</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+        <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+        <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+        <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Participer</h4>
       <ul>
-        <li><a href="dons.html">💛 Faire un don</a></li>
+        <li><a href="dons.html" data-i18n="nav.cta">💛 Faire un don</a></li>
         <li><a href="dons.html">🤝 Bénévolat</a></li>
         <li><a href="dons.html">🏢 Partenariat</a></li>
         <li><a href="dons.html">🌍 Diaspora</a></li>
@@ -745,7 +771,7 @@ var FOOTER_HTML = `<footer>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</p>
+    <p><span data-i18n="footer.copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
     <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
   </div>
 </footer>`;
@@ -792,4 +818,6 @@ function submitContact(){alert('Message envoyé au comité.\nBarakallahu fikoum 
 function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
 </script>
 <script>window.addEventListener('load',function(){animBar('pbar','ppct',2)})</script>
+
+<script src="translations.js"></script>
 </body></html>

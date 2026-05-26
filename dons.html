@@ -287,15 +287,23 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
 .ptier{border-radius:4px;overflow:hidden}
 @media(max-width:900px){.dons-grid,.bene-grid{grid-template-columns:1fr}.ptiers{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ptiers{grid-template-columns:1fr}}
+
+<style>
+.lang-btn.active{background:var(--or)!important;border-color:var(--or)!important;color:var(--brun)!important}
+.lang-btn:hover{background:rgba(201,168,76,0.2)!important;color:var(--or-clair)!important}
+[dir="rtl"] .mob-menu a{text-align:right}
+[dir="rtl"] .nav-brand{flex-direction:row-reverse}
+[dir="rtl"] .footer-grid{direction:rtl}
+</style>
 </style>
 </head>
 <body>
 <div id="nav-root"></div>
 <div class="page-hero-bg" style="position:relative;overflow:hidden;background:linear-gradient(155deg,#040f07,#0d3320,#1A5C3A)">
   <div style="position:absolute;inset:0;background-image:url('images/11-residence-nuit.jpg');background-size:cover;background-position:center;opacity:0.22;z-index:0"></div>
-  <div class="breadcrumb"><a href="index.html">Accueil</a> › <span>Contribuer</span></div>
-  <div class="ph-tag">Participer au projet</div>
-  <h1 class="ph-title">Contribuer au <em>Projet</em></h1>
+  <div class="breadcrumb"><a href="index.html" data-i18n="nav.home">Accueil</a> › <span>Contribuer</span></div>
+  <div class="ph-tag"><span data-i18n="dons.hero.tag">Participer au projet</span></div>
+  <h1 class="ph-title"><span data-i18n="dons.hero.title">Contribuer au Projet</span></h1>
   <p class="ph-sub">Votre don, quel que soit son montant, est un acte de foi qui construit concrètement le complexe Keur-Serigne Touba de Pikine.</p>
   <p style="font-family:'Amiri',serif;font-size:1.1rem;color:rgba(242,223,160,0.65);margin-top:0.7rem;position:relative;z-index:1">« Barakallahu fikoum » · جزاكم الله خيرًا</p>
 </div>
@@ -336,7 +344,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
             <div><label class="flabel">Email *</label><input class="finput" type="email" placeholder="votre@email.com"></div>
             <div><label class="flabel">Téléphone *</label><input class="finput" type="tel" placeholder="+221 …"></div>
             <div><label class="flabel">Mode de paiement</label><select class="fselect"><option>Choisir…</option><option>Wave — +221 77 796 05 06</option><option>Orange Money — +221 77 796 05 06</option><option>Virement BIS — N° SN079 01113 251182981001</option><option>Virement international</option></select></div>
-            <button class="btn-or" style="justify-content:center" onclick="submitDon()">💛 Valider ma contribution</button>
+            <button class="btn-or" style="justify-content:center" onclick="submitDon()">data-i18n="don.btn.validate">💛 Valider ma contribution</button>
           </div>
           <p style="font-size:0.63rem;color:#8a7a5a;margin-top:0.5rem">Un reçu officiel vous sera remis. Paiement sécurisé.</p>
         </div>
@@ -418,21 +426,39 @@ var NAV_HTML = `<nav>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="projet.html">Le Projet</a></li>
-    <li><a href="complexe.html">Le Complexe</a></li>
-    <li><a href="gouvernance.html">Gouvernance</a></li>
-    <li><a href="actualites.html">Actualités</a></li>
-    <li><a href="dons.html">Contribuer</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+    <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+    <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+    <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
+    <li><a href="dons.html" data-i18n="nav.donate">Contribuer</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="dons.html">💛 Faire un don</a>
+  
+<div class="lang-selector" style="display:flex;align-items:center;gap:4px;margin-left:0.8rem;border-left:1px solid rgba(201,168,76,0.3);padding-left:0.8rem">
+  <button class="lang-btn active" data-lang="fr"
+    onclick="I18N.apply('fr')"
+    style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    FR
+  </button>
+  <button class="lang-btn" data-lang="en"
+    onclick="I18N.apply('en')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    EN
+  </button>
+  <button class="lang-btn" data-lang="ar"
+    onclick="I18N.apply('ar')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    عر
+  </button>
+</div>
+  <a class="nav-cta" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
   <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">🏠 Accueil</a>
+  <a href="index.html" data-i18n="nav.home">🏠 Accueil</a>
   <a href="projet.html">🕌 Le Projet</a>
   <a href="complexe.html">🏛️ Le Complexe</a>
   <a href="gouvernance.html">👥 Gouvernance</a>
@@ -456,17 +482,17 @@ var FOOTER_HTML = `<footer>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projet.html">Le Projet</a></li>
-        <li><a href="complexe.html">Le Complexe</a></li>
-        <li><a href="gouvernance.html">Gouvernance</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+        <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+        <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+        <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Participer</h4>
       <ul>
-        <li><a href="dons.html">💛 Faire un don</a></li>
+        <li><a href="dons.html" data-i18n="nav.cta">💛 Faire un don</a></li>
         <li><a href="dons.html">🤝 Bénévolat</a></li>
         <li><a href="dons.html">🏢 Partenariat</a></li>
         <li><a href="dons.html">🌍 Diaspora</a></li>
@@ -486,7 +512,7 @@ var FOOTER_HTML = `<footer>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</p>
+    <p><span data-i18n="footer.copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
     <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
   </div>
 </footer>`;
@@ -533,4 +559,6 @@ function submitContact(){alert('Message envoyé au comité.\nBarakallahu fikoum 
 function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
 </script>
 <script>window.addEventListener('load',function(){animBar('pbar2','ppct2',2)})</script>
+
+<script src="translations.js"></script>
 </body></html>

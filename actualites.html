@@ -269,17 +269,25 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
   .gov-members,.exec-grid{grid-template-columns:1fr}
   .actu-card{grid-template-columns:85px 1fr}
 }
+
+<style>
+.lang-btn.active{background:var(--or)!important;border-color:var(--or)!important;color:var(--brun)!important}
+.lang-btn:hover{background:rgba(201,168,76,0.2)!important;color:var(--or-clair)!important}
+[dir="rtl"] .mob-menu a{text-align:right}
+[dir="rtl"] .nav-brand{flex-direction:row-reverse}
+[dir="rtl"] .footer-grid{direction:rtl}
+</style>
 </style>
 </head>
 <body>
 <div id="nav-root"></div>
 <div class="page-hero-bg" style="position:relative;overflow:hidden;background:linear-gradient(155deg,#040f07,#0d3320,#1A5C3A)">
   <div style="position:absolute;inset:0;background-image:url('images/04-mosquee-nuit.jpg');background-size:cover;background-position:center;opacity:0.22;z-index:0"></div>
-  <div class="breadcrumb"><a href="index.html">Accueil</a> › <span>Actualités</span></div>
+  <div class="breadcrumb"><a href="index.html" data-i18n="nav.home">Accueil</a> › <span>Actualités</span></div>
   <div class="ph-tag">Keur-Serigne Touba · Pikine</div>
   <h1 class="ph-title"><em>Actualités</em></h1>
 </div>
-<section class="s-pad blanc-bg"><div class="container"><div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem"><div><div class="tag">Dernières nouvelles</div><h2 class="h2">Journal de <em>bord</em></h2><div class="gold-rule"></div><div style="display:flex;flex-direction:column;gap:1.3rem"><div class="actu-card"><div class="actu-date"><div class="actu-day">15</div><div class="actu-month">Mai</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Lancement</div><h3>Lancement officiel du projet Keur-Serigne Touba de Pikine</h3><p>Le comité de coordination a officiellement lancé le projet lors d'une cérémonie réunissant les autorités locales, les Dahiras et la communauté mouride de Pikine. Les études architecturales sont en cours.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">22</div><div class="actu-month">Avr</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Financement</div><h3>Première collecte — 100 millions F CFA atteints</h3><p>Grâce à la mobilisation des fidèles de Pikine et de la diaspora, le premier palier de financement a été franchi. La campagne continue vers l'objectif des 5 milliards F CFA.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">10</div><div class="actu-month">Mar</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Planification</div><h3>Validation des plans architecturaux par le Conseil d'Administration</h3><p>Le CA a validé les plans définitifs du complexe. Les 6 zones ont été approuvées dans leur configuration finale. Les permis de construire sont en cours d'obtention.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">05</div><div class="actu-month">Jan</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Communauté</div><h3>Réunion de mobilisation des Dahiras du département de Pikine</h3><p>Plus de 40 Dahiras ont participé à la réunion de mobilisation communautaire. Un plan de contribution collective a été élaboré et validé.</p></div></div></div></div><div style="display:flex;flex-direction:column;gap:1.2rem"><div style="background:var(--vert);border-radius:4px;padding:1.3rem"><h3 style="font-family:Cormorant Garamond,serif;font-size:1.05rem;color:var(--or-clair);margin-bottom:1rem">📊 Avancement</h3><div style="margin-bottom:0.7rem"><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Financement</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">2%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:2%;transition:none"></div></div></div><div style="margin-bottom:0.7rem"><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Études architecturales</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">85%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:85%;transition:none"></div></div></div><div><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Permis de construire</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">60%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:60%;transition:none"></div></div></div></div><div style="background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;padding:1.3rem"><h3 style="font-family:Cormorant Garamond,serif;font-size:1.05rem;color:var(--brun);margin-bottom:0.5rem">📨 Rester informé</h3><p style="font-size:0.78rem;color:var(--texte-doux);line-height:1.6;margin-bottom:0.8rem">Recevez les actualités du projet par email.</p><input class="finput" type="text" placeholder="Votre nom" style="margin-bottom:0.55rem"><input class="finput" type="email" placeholder="Votre email" style="margin-bottom:0.55rem"><button class="btn-or" style="width:100%;justify-content:center;font-size:0.72rem" onclick="submitNL()">S'abonner ✦</button></div></div></div></div></section>
+<section class="s-pad blanc-bg"><div class="container"><div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem"><div><div class="tag">Dernières nouvelles</div><h2 class="h2">Journal de <em>bord</em></h2><div class="gold-rule"></div><div style="display:flex;flex-direction:column;gap:1.3rem"><div class="actu-card"><div class="actu-date"><div class="actu-day">15</div><div class="actu-month">Mai</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Lancement</div><h3>Lancement officiel du projet Keur-Serigne Touba de Pikine</h3><p>Le comité de coordination a officiellement lancé le projet lors d'une cérémonie réunissant les autorités locales, les Dahiras et la communauté mouride de Pikine. Les études architecturales sont en cours.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">22</div><div class="actu-month">Avr</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Financement</div><h3>Première collecte — 100 millions F CFA atteints</h3><p>Grâce à la mobilisation des fidèles de Pikine et de la diaspora, le premier palier de financement a été franchi. La campagne continue vers l'objectif des 5 milliards F CFA.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">10</div><div class="actu-month">Mar</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Planification</div><h3>Validation des plans architecturaux par le Conseil d'Administration</h3><p>Le CA a validé les plans définitifs du complexe. Les 6 zones ont été approuvées dans leur configuration finale. Les permis de construire sont en cours d'obtention.</p></div></div><div class="actu-card"><div class="actu-date"><div class="actu-day">05</div><div class="actu-month">Jan</div><div class="actu-year">2025</div></div><div class="actu-content"><div class="actu-tag">Communauté</div><h3>Réunion de mobilisation des Dahiras du département de Pikine</h3><p>Plus de 40 Dahiras ont participé à la réunion de mobilisation communautaire. Un plan de contribution collective a été élaboré et validé.</p></div></div></div></div><div style="display:flex;flex-direction:column;gap:1.2rem"><div style="background:var(--vert);border-radius:4px;padding:1.3rem"><h3 style="font-family:Cormorant Garamond,serif;font-size:1.05rem;color:var(--or-clair);margin-bottom:1rem">📊 Avancement</h3><div style="margin-bottom:0.7rem"><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Financement</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">2%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:2%;transition:none"></div></div></div><div style="margin-bottom:0.7rem"><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Études architecturales</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">85%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:85%;transition:none"></div></div></div><div><div style="display:flex;justify-content:space-between;margin-bottom:0.28rem"><span style="font-size:0.7rem;color:#9ab8a8">Permis de construire</span><span style="font-size:0.8rem;color:var(--or-clair);font-weight:700">60%</span></div><div class="pbar-track" style="height:6px"><div class="pbar-fill" style="width:60%;transition:none"></div></div></div></div><div style="background:var(--blanc);border:1px solid #e8dfc8;border-radius:4px;padding:1.3rem"><h3 style="font-family:Cormorant Garamond,serif;font-size:1.05rem;color:var(--brun);margin-bottom:0.5rem">📨 Rester informé</h3><p style="font-size:0.78rem;color:var(--texte-doux);line-height:1.6;margin-bottom:0.8rem">Recevez les actualités du projet par email.</p><input class="finput" type="text" placeholder="Votre nom" style="margin-bottom:0.55rem"><input class="finput" type="email" placeholder="Votre email" style="margin-bottom:0.55rem"><button class="btn-or" style="width:100%;justify-content:center;font-size:0.72rem" onclick="submitNL()">data-i18n="actu.nl.btn">S'abonner ✦</button></div></div></div></div></section>
 <div class="citation-section">
   <p class="citation-text">« Ô SEIGNEUR, fais de ma demeure un lieu propice à la quête du savoir, à la méditation et à la compréhension. Fais de ma demeure un foyer de guidance, de droiture et d'\''enseignement. »</p>
   <div class="citation-author">Cheikh Ahmadou Bamba Mbacké — Fondateur du Mouridisme · Matlabul Fawseyni</div>
@@ -296,21 +304,39 @@ var NAV_HTML = `<nav>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="projet.html">Le Projet</a></li>
-    <li><a href="complexe.html">Le Complexe</a></li>
-    <li><a href="gouvernance.html">Gouvernance</a></li>
-    <li><a href="actualites.html">Actualités</a></li>
-    <li><a href="dons.html">Contribuer</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+    <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+    <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+    <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
+    <li><a href="dons.html" data-i18n="nav.donate">Contribuer</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="dons.html">💛 Faire un don</a>
+  
+<div class="lang-selector" style="display:flex;align-items:center;gap:4px;margin-left:0.8rem;border-left:1px solid rgba(201,168,76,0.3);padding-left:0.8rem">
+  <button class="lang-btn active" data-lang="fr"
+    onclick="I18N.apply('fr')"
+    style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    FR
+  </button>
+  <button class="lang-btn" data-lang="en"
+    onclick="I18N.apply('en')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    EN
+  </button>
+  <button class="lang-btn" data-lang="ar"
+    onclick="I18N.apply('ar')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    عر
+  </button>
+</div>
+  <a class="nav-cta" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
   <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">🏠 Accueil</a>
+  <a href="index.html" data-i18n="nav.home">🏠 Accueil</a>
   <a href="projet.html">🕌 Le Projet</a>
   <a href="complexe.html">🏛️ Le Complexe</a>
   <a href="gouvernance.html">👥 Gouvernance</a>
@@ -334,17 +360,17 @@ var FOOTER_HTML = `<footer>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projet.html">Le Projet</a></li>
-        <li><a href="complexe.html">Le Complexe</a></li>
-        <li><a href="gouvernance.html">Gouvernance</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+        <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+        <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+        <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Participer</h4>
       <ul>
-        <li><a href="dons.html">💛 Faire un don</a></li>
+        <li><a href="dons.html" data-i18n="nav.cta">💛 Faire un don</a></li>
         <li><a href="dons.html">🤝 Bénévolat</a></li>
         <li><a href="dons.html">🏢 Partenariat</a></li>
         <li><a href="dons.html">🌍 Diaspora</a></li>
@@ -364,7 +390,7 @@ var FOOTER_HTML = `<footer>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</p>
+    <p><span data-i18n="footer.copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
     <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
   </div>
 </footer>`;
@@ -410,4 +436,6 @@ function submitDon(){
 function submitContact(){alert('Message envoyé au comité.\nBarakallahu fikoum !')}
 function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
 </script>
+
+<script src="translations.js"></script>
 </body></html>

@@ -269,12 +269,20 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
   .gov-members,.exec-grid{grid-template-columns:1fr}
   .actu-card{grid-template-columns:85px 1fr}
 }
+
+<style>
+.lang-btn.active{background:var(--or)!important;border-color:var(--or)!important;color:var(--brun)!important}
+.lang-btn:hover{background:rgba(201,168,76,0.2)!important;color:var(--or-clair)!important}
+[dir="rtl"] .mob-menu a{text-align:right}
+[dir="rtl"] .nav-brand{flex-direction:row-reverse}
+[dir="rtl"] .footer-grid{direction:rtl}
+</style>
 </style>
 </head>
 <body>
 <div id="nav-root"></div>
 <div class="page-hero-bg" style="background-image:url('images/07-vue-3d-aerienne.jpg');background-size:cover;background-position:center;background-blend-mode:overlay;">
-  <div class="breadcrumb"><a href="index.html">Accueil</a> › <span>Le Complexe</span></div>
+  <div class="breadcrumb"><a href="index.html" data-i18n="nav.home">Accueil</a> › <span>Le Complexe</span></div>
   <div class="ph-tag">Keur-Serigne Touba · Pikine</div>
   <h1 class="ph-title"><em>Le Complexe</em></h1>
 </div>
@@ -344,7 +352,7 @@ footer{background:var(--brun);border-top:2px solid rgba(201,168,76,0.25);padding
   </div>
 </section>
 
-<section class="s-pad vert-bg" style="text-align:center"><div class="container" style="position:relative;z-index:1"><h2 class="h2 h2-light">Contribuez à <em>construire</em> ce complexe</h2><p style="color:#b0cfc0;max-width:460px;margin:0 auto 1.8rem;line-height:1.8">5 000 000 000 F CFA à réunir. Chaque don, chaque brique compte.</p><a class="btn-or" href="dons.html">💛 Faire un don maintenant</a></div></section>
+<section class="s-pad vert-bg" style="text-align:center"><div class="container" style="position:relative;z-index:1"><h2 class="h2 h2-light"><span data-i18n="complexe.cta.title">Contribuez à construire ce complexe</span></h2><p style="color:#b0cfc0;max-width:460px;margin:0 auto 1.8rem;line-height:1.8">5 000 000 000 F CFA à réunir. Chaque don, chaque brique compte.</p><a class="btn-or" href="dons.html">💛 Faire un don maintenant</a></div></section>
 
 <!-- GALERIE COMPLÈTE -->
 <section class="s-pad blanc-bg">
@@ -404,21 +412,39 @@ var NAV_HTML = `<nav>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="projet.html">Le Projet</a></li>
-    <li><a href="complexe.html">Le Complexe</a></li>
-    <li><a href="gouvernance.html">Gouvernance</a></li>
-    <li><a href="actualites.html">Actualités</a></li>
-    <li><a href="dons.html">Contribuer</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+    <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+    <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+    <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
+    <li><a href="dons.html" data-i18n="nav.donate">Contribuer</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="dons.html">💛 Faire un don</a>
+  
+<div class="lang-selector" style="display:flex;align-items:center;gap:4px;margin-left:0.8rem;border-left:1px solid rgba(201,168,76,0.3);padding-left:0.8rem">
+  <button class="lang-btn active" data-lang="fr"
+    onclick="I18N.apply('fr')"
+    style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--or-clair);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    FR
+  </button>
+  <button class="lang-btn" data-lang="en"
+    onclick="I18N.apply('en')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    EN
+  </button>
+  <button class="lang-btn" data-lang="ar"
+    onclick="I18N.apply('ar')"
+    style="background:transparent;border:1px solid rgba(201,168,76,0.25);color:#9ab8a8;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;padding:0.28rem 0.6rem;border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s">
+    عر
+  </button>
+</div>
+  <a class="nav-cta" href="dons.html" data-i18n="nav.cta">💛 Faire un don</a>
   <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">🏠 Accueil</a>
+  <a href="index.html" data-i18n="nav.home">🏠 Accueil</a>
   <a href="projet.html">🕌 Le Projet</a>
   <a href="complexe.html">🏛️ Le Complexe</a>
   <a href="gouvernance.html">👥 Gouvernance</a>
@@ -442,17 +468,17 @@ var FOOTER_HTML = `<footer>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projet.html">Le Projet</a></li>
-        <li><a href="complexe.html">Le Complexe</a></li>
-        <li><a href="gouvernance.html">Gouvernance</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="projet.html" data-i18n="nav.project">Le Projet</a></li>
+        <li><a href="complexe.html" data-i18n="nav.complex">Le Complexe</a></li>
+        <li><a href="gouvernance.html" data-i18n="nav.governance">Gouvernance</a></li>
+        <li><a href="actualites.html" data-i18n="nav.news">Actualités</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Participer</h4>
       <ul>
-        <li><a href="dons.html">💛 Faire un don</a></li>
+        <li><a href="dons.html" data-i18n="nav.cta">💛 Faire un don</a></li>
         <li><a href="dons.html">🤝 Bénévolat</a></li>
         <li><a href="dons.html">🏢 Partenariat</a></li>
         <li><a href="dons.html">🌍 Diaspora</a></li>
@@ -472,7 +498,7 @@ var FOOTER_HTML = `<footer>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</p>
+    <p><span data-i18n="footer.copy">© 2025 — Keur-Serigne Touba Al Buqatul Mubaarak de Pikine — Tous droits réservés</span></p>
     <p>GPS : 14.754315, -17.3957 · Pikine, Dakar, Sénégal</p>
   </div>
 </footer>`;
@@ -518,4 +544,6 @@ function submitDon(){
 function submitContact(){alert('Message envoyé au comité.\nBarakallahu fikoum !')}
 function submitNL(){alert('Abonnement confirmé ! Barakallahu fikoum.')}
 </script>
+
+<script src="translations.js"></script>
 </body></html>
